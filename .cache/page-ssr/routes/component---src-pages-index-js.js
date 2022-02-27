@@ -5580,168 +5580,196 @@ const IndexPage = () => {
   }
 
   function mounted() {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(".top-btn").hide();
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(".nav-items").css("color", "white");
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(0).css({
-      color: "#000000",
-      visibility: "visible"
-    });
     var that = this;
     var r;
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.top-btn').hide();
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.nav-items').css('color', 'white');
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').css('visibility', 'hidden');
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(0).css({
+      "color": "#000000",
+      'visibility': 'visible'
+    }); /////////
+
     jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scroll(function () {
       var position = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).scrollTop;
 
       if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).scrollTop() > 100) {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".top-btn").fadeIn("slow");
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.top-btn').fadeIn('slow');
       } else {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".top-btn").fadeOut("slow");
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.top-btn').fadeOut('slow');
       }
 
       if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).scrollTop() < window.innerHeight * 0.6) {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(0).css({
-          color: "#000000",
-          visibility: "visible"
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').css('visibility', 'hidden');
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(0).css({
+          "color": "#000000",
+          'visibility': 'visible'
         });
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".nav-items").removeClass("active-white-item"); // $('.nav-items').eq(2).removeClass("active-white-item");
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.nav-items').removeClass("active-white-item"); // $('.nav-items').eq(2).removeClass("active-white-item");
 
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".nav-items").eq(0).addClass("active-white-item");
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.nav-items').eq(0).addClass("active-white-item");
       }
 
       var position = window.pageYOffset;
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()(".section").each(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('.section').each(function () {
         var target = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top;
-        var id = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).attr("id");
-        var navLinks = jquery__WEBPACK_IMPORTED_MODULE_2___default()("li a");
+        let id = "";
+        id = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).attr('id');
+        var doc = document.documentElement;
+        var top = window.pageYOffset; // console.log("Top::",top);
+
+        console.log("ID:::", id);
+        var navLinks = jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a');
 
         if (position >= target - window.innerHeight * 0.5) {
-          if (id === "home" || id === "services" || id === "portfolio" || id === "partners" || id === "products" || id === "contact_us" || id === "bcd-life") {
+          if (top < 400) {
+            id = "home";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-          } else {
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-black-item"); // URL('uhuhuu');
-          }
-
-          if (id === "home") {
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(0).css({
               color: "black",
               visibility: "visible"
-            }); // that.$router.push('#home');
-          } else if (id === "about") {
+            });
+          } else if (top > 404 && top < 1110) {
+            id = "about";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(1).css({
               color: "#FFCB05",
               visibility: "visible"
             });
-          } else if (id === "services") {
+          } else if (top > 1112 && top < 1825) {
+            id = "services";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(2).css({
               color: "black",
               visibility: "visible"
             });
-          } else if (id === "portfolio") {
+          } else if (top > 1828 && top < 2604) {
+            id = "portfolio";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(3).css({
               color: "black",
               visibility: "visible"
-            }); // that.$router.push('#portfolio');
-          } else if (id === "technologies") {
+            });
+          } else if (top > 2606 && top < 3300) {
+            id = "technologies";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(4).css({
               color: "#0007700",
               visibility: "visible"
-            }); // that.$router.push('#technologies');
-          } else if (id === "products") {
+            });
+          } else if (top > 3302 && top < 3918) {
+            id = "products";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(5).css({
               color: "black",
               visibility: "visible"
-            }); // that.$router.push('#technologies');
-          } else if (id === "partners") {
+            });
+          } else if (top > 3920 && top < 4860) {
+            id = "partners";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(6).css({
               color: "black",
               visibility: "visible"
-            }); // that.$router.push('#partners');
-          } // if (id == 'our_team') {
-          //   $('.spans').css('visibility', 'hidden');
-          //   $('.spans').eq(7).css({
-          //     "color": "#FFCB05",
-          //     'visibility': 'visible'
-          //   });
-          // }
-          else if (id === "bcd-life") {
+            });
+          } else if (top > 4861 && top < 5350) {
+            id = "bcd-life";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(7).css({
               color: "#000",
               visibility: "visible"
             });
-          } else if (id === "contact_us") {
+          } else if (top > 5351) {
+            id = "contact_us";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(8).css({
               color: "#000",
               visibility: "visible"
-            }); // that.$router.push('#contact-us');
+            });
+          } else {
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-black-item");
           }
         }
       });
     });
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scroll(function () {
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(0).css("visibility") === "visible") {
-        window.history.pushState("#home");
-        return false;
-      }
 
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(1).css("visibility") === "visible") {
-        window.history.pushState("#about_us");
-        return false;
-      }
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(0).css('visibility') === 'visible') {
+      window.history.replaceState(null, null, '#home');
+      return false;
+    }
 
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(2).css("visibility") === "visible") {
-        window.history.pushState("#services");
-        return false;
-      } else if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(3).css("visibility") === "visible") {
-        window.history.pushState("#portfolio");
-        return false;
-      }
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(1).css('visibility') === 'visible') {
+      window.history.replaceState(null, null, '#about_us');
+      return false;
+    }
 
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(4).css("visibility") === "visible") {
-        history.pushState("#technologies");
-        return false;
-      }
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(2).css('visibility') === 'visible') {
+      window.history.pushState(null, null, '#services');
+      return false;
+    }
 
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(5).css("visibility") === "visible") {
-        window.history.pushState("#partners");
-        return false;
-      } // if ($('.spans').eq(6).css('visibility') === 'visible') {
-      //   history.pushState(null, null, '#our_team');
-      //   return false;
-      // }
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(3).css('visibility') === 'visible') {
+      window.history.pushState(null, null, '#portfolio');
+      return false;
+    }
+
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(4).css('visibility') === 'visible') {
+      window.history.pushState(null, null, '#technologies');
+      return false;
+    }
+
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(5).css('visibility') === 'visible') {
+      window.history.pushState(null, null, '#partners');
+      return false;
+    } // if ($('.spans').eq(6).css('visibility') === 'visible') {
+    //   history.pushState(null, null, '#our_team');
+    //   return false;
+    // }
 
 
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(6).css("visibility") === "visible") {
-        window.history.pushState("#life_at_bcd");
-        return false;
-      }
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(6).css('visibility') === 'visible') {
+      window.history.pushState(null, null, '#life_at_bcd');
+      return false;
+    }
 
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(7).css("visibility") === "visible") {
-        window.history.pushState("#contact_us");
-        return false;
-      }
-    }, 500); // ($('#yourElement').css('position') == 'absolute')
-  } // ($('#yourElement').css('position') == 'absolute')
+    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(7).css('visibility') === 'visible') {
+      window.history.pushState(null, null, '#contact_us');
+      return false;
+    } // ($('#yourElement').css('position') == 'absolute')
 
+  }
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    const mount = mounted();
-    return mount;
-  }, [url]);
-  console.log("URL::", url);
+    mounted();
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav-component"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {

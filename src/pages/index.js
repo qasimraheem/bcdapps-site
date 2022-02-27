@@ -87,122 +87,117 @@ const IndexPage = () => {
       }
 
       var position = window.pageYOffset;
+      
 
       $('.section').each(function() {
         var target = $(this).offset().top;
-        let id = "";
-        id = $(this).attr('id');
-        var doc = document.documentElement;
-        var top = window.pageYOffset 
-        // console.log("Top::",top);
-        console.log("ID:::",id)
-        
+        var id = $(this).attr('id');
+
 
         var navLinks = $('li a');
 
         if (position >= target - (window.innerHeight * 0.5)) {
-          if(top < 400){
-            id = "home";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(0).css({
-              color: "black",
-              visibility: "visible",})
-            }
-          else if(top > 404 && top < 1110) {
-            id = "about";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(1).css({
-              color: "#FFCB05",
-              visibility: "visible",
+          if (id == 'home' || id == 'services' || id == 'portfolio' || id == 'partners' || id == 'products' || id=='contact_us' || id=='bcd-life') {
+            navLinks.removeClass('active-white-item');
+            navLinks.removeClass('active-black-item');
+            $('li a[href="#' + id + '"]').addClass('active-white-item');
+          } else {
+            navLinks.removeClass('active-white-item');
+            navLinks.removeClass('active-black-item');
+            $('li a[href="#' + id + '"]').addClass('active-black-item');
+            // URL('uhuhuu');
+          }
+
+
+          if (id == 'home') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(0).css({
+              "color": "black",
+              'visibility': 'visible'
             });
-          }else if(top > 1112 && top < 1825) {
-            id = "services";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(2).css({
-              color: "black",
-              visibility: "visible",
+
+
+
+            // that.$router.push('#home');
+          }
+          if (id == 'about') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(1).css({
+              "color": "#FFCB05",
+              'visibility': 'visible'
             });
-          }else if(top > 1828 && top < 2604 ) {
-            id = "portfolio";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(3).css({
-              color: "black",
-              visibility: "visible",
+
+          }
+          if (id == 'services') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(2).css({
+              "color": "black",
+              'visibility': 'visible'
             });
-          }else if(top > 2606 && top < 3300) {
-            id = "technologies";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(4).css({
-              color: "#0007700",
-              visibility: "visible",
+
+          }
+          if (id == 'portfolio') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(3).css({
+              "color": "black",
+              'visibility': 'visible'
             });
-          }else if(top > 3302 && top < 3918) {
-            id = "products";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(5).css({
-              color: "black",
-              visibility: "visible",
+            // that.$router.push('#portfolio');
+          }
+          if (id == 'technologies') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(4).css({
+              "color": "#0007700",
+              'visibility': 'visible'
             });
-          }else if(top > 3920 && top < 4860) {
-            id = "partners";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(6).css({
-              color: "black",
-              visibility: "visible",
+            // that.$router.push('#technologies');
+          }
+          if (id == 'products') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(5).css({
+              "color": "black",
+              'visibility': 'visible'
             });
-          }else if(top > 4861 && top < 5350) {
-            id = "bcd-life";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(7).css({
-              color: "#000",
-              visibility: "visible",
+            // that.$router.push('#technologies');
+          }
+          if (id == 'partners') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(6).css({
+              "color": "black",
+              'visibility': 'visible'
             });
-          }else if(top > 5351) {
-            id = "contact_us";
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
-            $(".spans").css("visibility", "hidden");
-            $(".spans").eq(8).css({
-              color: "#000",
-              visibility: "visible",
+            // that.$router.push('#partners');
+          }
+          // if (id == 'our_team') {
+          //   $('.spans').css('visibility', 'hidden');
+          //   $('.spans').eq(7).css({
+          //     "color": "#FFCB05",
+          //     'visibility': 'visible'
+          //   });
+          // }
+          if (id == 'bcd-life') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(7).css({
+              "color": "#000",
+              'visibility': 'visible'
             });
-          }else {
-            navLinks.removeClass("active-white-item");
-            navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-black-item");
+          }
+
+          if (id == 'contact_us') {
+            $('.spans').css('visibility', 'hidden');
+            $('.spans').eq(8).css({
+              "color": "#000",
+              'visibility': 'visible'
+            });
+            // that.$router.push('#contact-us');
           }
         }
-      })
+      });
 
 
-    })
+    });
 
-    
+    $(window).scroll(_.throttle(function() {
 
       if ($('.spans').eq(0).css('visibility') === 'visible') {
         window.history.replaceState(null, null, '#home');
@@ -240,10 +235,11 @@ const IndexPage = () => {
         window.history.pushState(null, null, '#contact_us');
         return false;
       }
-    
+    }, 500));
 
     // ($('#yourElement').css('position') == 'absolute')
   }
+
 
   
   useEffect(() => {

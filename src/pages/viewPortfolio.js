@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import $ from "jquery";
 import _ from 'lodash';
 import "./scss/viewportfolio.scss"
@@ -12,8 +12,8 @@ import footerLogo from "../images/footer-logo.0c1aa2c.png";
 import dwsLogo from "../images/Dws-logo.svg";
 // import ganderTxt from "../images/gander-text.png";
 // import ganderTxt from "../images/gander-text.png";
-// import DWSImg from "../images/DWS1.png";
-// import tokenLabImg from "../images/Tokenlab1.png";
+// import DWSImg from "../images/DWS.png";
+import tokenLabImg from "../images/Tokenlab1.png";
 // import googlePlayImg from "../images/google-play-store-ic.png";
 
 
@@ -36,7 +36,7 @@ const [selected, setSelected] = useState();
             link: 'https://gander.tech/',
             image: 'gander-text.png',
             bullets: [],
-            foo: `require${ganderTxt}`,
+            foo: ganderTxt,
             description: 'Gander is the Block Explorer for the Expanse Blockchain. A Block Explorer is basically a search engine that allows users to easily lookup, confirm and validate transactions that have taken place on the Expanse Blockchain.<br><br>',
             // images: ['tokenlab-final.png','Gander-img.jpg', 'gander2.png', 'gander3.png', 'gander4.png', 'gander5.png']
             images: ['g1.png', 'g2.png', 'g3.png', 'g4.png'],
@@ -138,7 +138,7 @@ const [selected, setSelected] = useState();
       
   
       var that = this;
-      this.selected = this.projects[0];
+      setSelected(projects[0])
       console.log("hereeeeee")
 
       //       window.onscroll = function(e) {
@@ -221,6 +221,10 @@ const [selected, setSelected] = useState();
     function selectProject(val) {
       return setSelected(val);
     }
+
+    useEffect(() => {
+      mounted();
+    },[])
    const index = [];
     return (
         <section className="portfolio-container" id="portfolio">
@@ -238,15 +242,15 @@ const [selected, setSelected] = useState();
                   <path id="Rounded_Rectangle_4" data-name="Rounded Rectangle 4" className="cls-1" d="M16.5,55A16.5,16.5,0,0,1,0,38.5v-22a16.5,16.5,0,1,1,33,0v22A16.5,16.5,0,0,1,16.5,55ZM31,17.5a14.5,14.5,0,0,0-29,0v20a14.5,14.5,0,0,0,29,0v-20ZM16.5,22A2.5,2.5,0,0,1,14,19.5v-6a2.5,2.5,0,0,1,5,0v6A2.5,2.5,0,0,1,16.5,22Z" />
                 </svg>
           <figure className="animate-angle">
-            <img src={'ganderImg'} className="gander-img animate-image animation-image1"/>
+            <img src={ganderImg} className="gander-img animate-image animation-image1"/>
                   <img src={'cliImbImg'} className="gander-img animate-image animation-image2"/>
                   <img src={'DWSImg'} className="gander-img animate-image animation-image3"/>
                   <img src={'tokenLabImg'} className="gander-img animate-image animation-image4"/>
-                  {/* {selected.images.map((img,index) => <img key={index} src={img} className={index ? `nimation-image${index}`: "gander-img animate-image"} />)} */}
+                  {/* {selected?.images.map((img,index) => <img key={index} src={img} className={index ? `nimation-image${index}`: "gander-img animate-image"} />)} */}
               <Carousel>
-              {/* {selected?.images.map((img,index) => <Carousel.Item key={index}> */}
-              {/* <img className="gander-img" src={`https://s3.ap-south-1.amazonaws.com/blockchaindapps/${img}`} alt={img}/>  */}
-              {/* </Carousel.Item> */}
+              {selected?.images.map((img,index) => <Carousel.Item key={index}>
+              <img className="gander-img" src={`https://s3.ap-south-1.amazonaws.com/blockchaindapps/${img}`} alt={img}/> 
+              </Carousel.Item>)}
               </Carousel>
           </figure>
         </div>
@@ -254,7 +258,7 @@ const [selected, setSelected] = useState();
           {projects.map((project,item) => <div className="white-border-one" key={index}>
             <figure className="img-1">
   
-            {/* <img className="img-1" src="require('../../assets/images/'+project.image)" /> */} 
+            <img className="img-1" src="require('../../assets/images/'+project.image)" /> 
             </figure>
             <div className="text-1">
               <h3 id="gander2">{/*project.bold*/}</h3><br/>
