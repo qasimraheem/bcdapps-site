@@ -1,0 +1,354 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  box-sizing: border-box;
+}
+$black:#000;
+$white:#fff;
+body{
+  background: #282828;
+  font-size: 16px;
+}
+section{
+  min-height: 100vh;
+}
+.main-heading{
+  font-weight: 100;
+  font-size: 3.2em;
+}
+.content-para{
+  font-size: 1em;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+button,input{
+  outline:none;
+}
+// img{
+//   max-width: 100%;
+// }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: block;
+  margin: 0 10px;
+}
+
+a {
+  text-decoration: none;
+}
+.m5 {
+  margin: 5px 0px 5px 0px;
+}
+.m10{
+  margin: 10px;
+}
+.m15 {
+  margin: 15px 3px;
+}
+.mt20{
+  margin-top: 20px;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.mt50{
+  margin-top: 50px;
+}
+.mt150 {
+  margin-top: 150px;
+}
+.ml30{
+  margin-left: -30px;
+}
+.mb40{
+  margin-bottom: 30px
+}
+.mb15{
+  margin-bottom: 15px;
+}
+.ft30{
+  font-size: 30px;
+}
+.pad-all{
+  padding: 26px 8px 11px 0;
+}
+.pad-all1 {
+  padding: 30px 0px 15px 0px;
+}
+.white-bg{
+  background: #fff;
+  border:20px solid #282827;
+}
+.flex-display{
+  display: grid;
+  align-items: center;
+}
+.black-bg{
+  background: #282827;
+  border:20px solid #fff;
+
+}
+.yellow-bg {
+  background: #ffcb05;
+  border: 20px solid #282827;
+}
+
+.white-circle {
+  background: url('../../images/circle2.svg') no-repeat top right;
+  margin: 0 auto;
+  padding: 20px 15px 10px 0;
+  text-align: right;
+  display: inline-block;
+}
+.circle {
+  background: url('../../images/circle1.svg') no-repeat center right;
+}
+
+.make-center{
+  text-align: center;
+}
+.white-txt{
+  color: #fff;
+}
+.black-txt{
+  color: #282827;
+}
+.yellow-txt {
+  color: #ffcb05;
+}
+.gray-txt{
+  color: #a7a7a7;
+}
+.bcd-btn{
+  border: none;
+  font-size: 18px;
+  padding: 15px 0;
+  background-color: #FFCB05;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  // background-image: -webkit-linear-gradient( 90deg, rgb(206,167,20) 0%, rgb(240,199,42) 100%);
+}
+.make-center{
+  text-align: center;
+}
+
+.top-btn{
+  position: fixed;
+  bottom: 4em;
+  right: 5em;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  z-index: 2;
+  color: #000;
+  text-align: center;
+  border: 2px solid #fff;
+  background: #ffc900;
+  font-size: 16px;
+  cursor: pointer;
+
+  span{
+    display: block;
+  }
+  & > i{
+    font-size: 23px;
+  }
+}
+.nav-component{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  .logo {
+    width: 230px;
+    height: 100px;
+  }
+  .hire {
+    padding: 15px 25px;
+  }
+  .top-content {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    .home-btn {
+      border-width: 15px;
+      border-color: #d6aa01;
+      border-style: solid;
+      border-radius: 50%;
+      background-color: #ffcb05;
+      width: 90px;
+      height: 90px;
+      font-size: 14px;
+      color: #282827;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+  .nav-menu{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .menu-svg{
+      display: none;
+      margin: 0 15px;
+      width: 35px;
+      height: 40px;
+
+    }
+    .menu{
+      display: none;
+      position: absolute;
+      width: 180px;
+      top: 111%;
+      right: 0px;
+      background: #000;
+      z-index: 2;
+      &:before{
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-color: $black;
+        position: absolute;
+        top: -7px;
+        right: 25px;
+        z-index: -1;
+        transform: rotate(45deg);
+      }
+      li{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.39);
+        margin: 0;
+      }
+      .menu-items{
+        padding: 15px 0 15px 15px;
+        display: block;
+        color: $white;
+        &:hover{
+          background-color: #FFCB05;
+          color: $black;
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-height: 700px){
+  .logo {
+    top: 3em;
+  }
+  .hire {
+    top: 3em;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .nav-component{
+    .top-content {
+      padding:14px;
+    }
+  }
+}
+@media screen and  (max-width:1280px ){
+  .container {
+    max-width:100%;
+  }
+  section{
+    height: 100%;
+  }
+  .nav-component {
+    .logo{
+      width: 200px;
+      height: 90px;
+    }
+    .menu-bar{
+      height: 44px;
+    }
+  }
+}
+@media screen and  (max-width:900px ){
+  .nav-component{
+    &>:last-child {
+      .menu-svg {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px){
+  .nav-component{
+    .logo{
+      width: 130px;
+      height: 55px;
+    }
+    .hire{
+      padding: 12px 20px;
+    }
+  }
+  .bcd-btn{
+    font-size: 14px;
+  }
+}
+@media screen and  (max-width:640px ){
+  section{
+    height: 100%;
+  }
+}
+@media screen and  (max-width:540px){
+  .main-heading{
+    font-size: 2.4em;
+  }
+  .white-circle {
+    padding:40px 15px 5px 0;
+  }
+  .nav-component{
+    &>:last-child {
+      .menu-svg {
+        margin: 0 15px 0 5px;
+      }
+    }
+  }
+}
+@media screen and (max-width:340px) {
+  .nav-component{
+    .top-content{
+      padding: 20px 5px 20px 10px;
+    }
+  }
+}
+// @import '../scss/components/home.scss';
+// @import '../scss/components/about.scss';
+// @import '../scss/components/services.scss';
+// @import '../scss/components/portfolio.scss';
+// @import '../scss/components/technologies.scss';
+// @import '../scss/components/partners.scss';
+// @import '../scss/components/team.scss';
+// @import '../scss/components/contact.scss';
+// @import '../scss/components/navbar.scss';
+// @import '../scss/components/job-application.scss';
+// @import '../scss/components/life-at-bcd.scss';
+// @import '../scss/components/products.scss';
+// @import './careers.scss';
+// @import './viewPortfolio.scss';
+.show{
+  display: block !important;
+}
+.hide{
+  display: none !important;
+}

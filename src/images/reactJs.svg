@@ -1,0 +1,12 @@
+<svg width="90" height="90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 24.9 22.2" style="enable-background:new 0 0 24.9 22.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#61DAFB;}
+	.st1{fill:none;stroke:#61DAFB;}
+</style>
+<circle class="st0" cx="12.5" cy="11.1" r="2"/>
+<g>
+	<ellipse class="st1" cx="12.5" cy="11.1" rx="11" ry="4.2"/>
+	<ellipse transform="matrix(0.866 -0.5 0.5 0.866 -3.8718 7.7117)" class="st1" cx="12.5" cy="11.1" rx="4.2" ry="11"/>
+	<ellipse transform="matrix(0.5 -0.866 0.866 0.5 -3.3691 16.3261)" class="st1" cx="12.5" cy="11.1" rx="11" ry="4.2"/>
+</g>
+</svg>

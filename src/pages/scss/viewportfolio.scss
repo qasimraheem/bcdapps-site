@@ -1,0 +1,478 @@
+.new-class-bar {
+    .btn-folo {
+      margin-top: -17px;
+    }
+  }
+  .white-bd {
+    border: 20px solid #282827;
+  }
+  .portfolio-container {
+    border: 20px solid white;
+    overflow: hidden;
+    position: relative;
+    // margin: 10px 0;s
+    .folio-col {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-items: center;
+      overflow: hidden;
+      .portfolio-frst-col {
+        position: relative;
+        height: 95.45vh;
+        background-image: url("../../images/portfolio-bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 100;
+        .mouse-svg {
+          position: absolute;
+          left: 89%;
+          bottom: 8%;
+          height: 37px;
+        }
+        .laptop-bg {
+          width: 80%;
+          max-height: 100%;
+        }
+        .animate-angle {
+          position: absolute;
+          width: 22.5vw;
+          height: 14.2vw;
+          left: 14.8vw;
+          overflow: hidden;
+          top: 25.5vw;
+          box-sizing: content-box;
+          border: 0.35vw solid black;
+          background: black;
+          border-radius: 7px;
+  
+          .gander-img {
+            width: 100%;
+            height: 100%;
+          }
+  
+          .animate-image {
+            position: absolute;
+          }
+  
+          .animation-image0 {
+            animation: fluid 5s linear 0s infinite;
+          }
+  
+          .animation-image1 {
+            animation: fluid 5s linear .5s infinite;
+            top: 239px;
+          }
+  
+          .animation-image2 {
+            animation: fluid 5s linear 1s infinite;
+            top: 478px;
+  
+          }
+  
+          .animation-image3 {
+            animation: fluid 5s linear 1.5s infinite;
+  
+          }
+  
+          .animation-image4 {
+            animation: fluid 5s linear 2s infinite;
+  
+          }
+  
+          @keyframes fluid1 {
+            to {
+              transform: translateY(-200%);
+            }
+          }
+        }
+      }
+  
+      .second-column {
+        background-color: #282827;
+  
+        .btn-column {
+          display: grid;
+          grid-template-columns: 10%;
+          justify-content: center;
+          margin-top: 10px;
+  
+          .part-bttn {
+            border-width: 15px;
+            border-color: #d6aa01;
+            border-style: solid;
+            border-radius: 50%;
+            background-color: #ffcb05;
+            width: 72px;
+            height: 72px;
+            font-size: 12px;
+            color: #282827;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+  
+            .vido-href {
+              text-decoration: none;
+              color: black;
+            }
+          }
+        }
+  
+        .white-border-one {
+          display: grid;
+          grid-template-rows: 100px auto;
+          border: 5px solid white;
+          max-width: 399px;
+          position: relative;
+          margin: 0 auto;
+          padding: 0 0 35px 0;
+          transform: scale(1.5);
+          height: 400px;
+  
+          .img-1 {
+            max-width: 185px;
+            max-height: 100px;
+            margin: 9px 0 0 12px;
+          }
+  
+          .text-1 {
+            margin: 27px;
+            font-size: 0.9em;
+            color: white;
+  
+            .text-list {
+              color: white;
+              padding: 5px 0 0 0;
+            }
+          }
+  
+          .outer-border-svg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #d6aa01;
+            ;
+            width: 117px;
+            height: 117px;
+            z-index: 9;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+  
+            .ring-svg {
+              display: grid;
+              border-style: solid;
+              border-width: 17px;
+              border-color: #ffcb05;
+              border-radius: 50%;
+              background-color: white;
+              width: 100px;
+              height: 100px;
+              z-index: 24;
+              font-size: 11px;
+              color: #000;
+              font-weight: bold;
+              justify-content: center;
+              align-items: center;
+  
+              .visit-gander {
+                color: black;
+                font-size: 10px;
+                text-align: center;
+              }
+            }
+          }
+        }
+  
+        .app-details {
+  
+          img {
+            width: 120px;
+          }
+         
+        }
+      }
+    }
+  }
+  
+  .images-container2 {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  @media screen and (max-width:1699px) {
+    .portfolio-container {
+      .folio-col {
+        .portfolio-frst-col {
+          .animate-angle {
+            left: 248px;
+            top: 25.25vw;
+            width: 22.1vw;
+          }
+        }
+        .second-column {
+          .white-border-one {
+            border: 5px solid white;
+            max-width: 399px;
+            position: relative;
+            margin: 0 auto;
+            padding: 0 0 35px 0;
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width:1589px) {
+    .portfolio-container {
+      .folio-col {
+        .portfolio-frst-col {
+          .animate-angle {
+            width: 22vw;
+            height: 14.2vw;
+            left: 14.57vw;
+            top: 25vw;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width:1443px) {
+    .portfolio-container {
+      .folio-col {
+        .portfolio-frst-col {
+          .animate-angle {
+            width: 22vw;
+            height: 14.2vw;
+            left: 14.7vw;
+            top: 25.2vw;
+          }
+        }
+        .second-column {
+          .white-border-one {
+            border: 5px solid white;
+            max-width: 399px;
+            position: relative;
+            margin: 0 auto;
+            padding: 0 0 35px 0;
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width:1380px) {
+    .portfolio-container {
+      .folio-col {
+        .portfolio-frst-col {
+          .animate-angle {
+            left: 200.5px;
+            top: 340px;
+            height: 185px;
+            width: 292px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width:1025px) {
+    .portfolio-container {
+      border: none;
+      .folio-col {
+        .portfolio-frst-col {
+          background-position: center;
+          height: 100vh;
+          .animate-angle {
+            width: 26vw;
+            height: 16.2vw;
+            left: 13.7vw;
+            top: 299px;
+            // width: 24.5vw;
+            // height: 16.2vw;
+            // left: 14.35vw;
+            // top: 280px;
+          }
+        }
+        .second-column {
+          .white-border-one {
+            margin-top: 170px;
+          }
+        }
+      }
+    }
+    .bcd-nav {
+      top: 78px;
+      left: 493px;
+      right: auto;
+      transform: rotateY(180deg);
+      li {
+        .nav-items {
+          &> :first-child {
+            &>span {
+              transform: rotateZ(180deg) rotateX(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  #portfolio-nav {
+    display: block !important;
+    z-index: 119;
+  }
+  @media screen and (max-width:768px) {
+    .portfolio-container {
+      .folio-col {
+        grid-template-columns: none;
+        justify-content: center;
+  
+        .portfolio-frst-col {
+  
+          position: relative;
+          height: 821px;
+          width: 100vw;
+          background-size: cover;
+  
+          .animate-angle {
+            position: absolute;
+            width: 45vw;
+            height: 29vw;
+            left: 30.85vw;
+            overflow: hidden;
+            top: 303px;
+            box-sizing: content-box;
+            border: 0.35vw solid black;
+            border-radius: 7px;
+            background: black;
+          }
+        }
+  
+        .second-column {
+          height: 600px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+  
+          .white-border-one {
+            margin: 10px 0 0 0;
+          }
+        }
+      }
+    }
+    .bcd-nav {
+      top: 25%;
+      left: -24px;
+      right: auto;
+      transform: rotateY(180deg);
+    }
+  }
+  @media screen and (max-width:425px) {
+    .nav-component {
+      .top-content {
+        padding: 24px 17px;
+      }
+    }
+    .bcd-nav {
+      top: 12.7%;
+      left: -24px;
+      right: auto;
+      transform: rotateY(180deg);
+    }
+    .portfolio-container {
+      .folio-col {
+        .portfolio-frst-col {
+          .animate-angle {
+            width: 66.5vw;
+            height: 41vw;
+            left: 21.85vw;
+            top: 327px;
+            border-radius: 0px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width:376px) {
+    .portfolio-container {
+      .folio-col {
+        .portfolio-frst-col {
+          height: 443px;
+  
+          .animate-angle {
+            width: 46vw;
+            height: 108px;
+            left: 30.31vw;
+            top: 45.3vw;
+          }
+        }
+  
+        .second-column {
+          height: 470px;
+          display: flex;
+          align-items: end;
+          padding: 0;
+          justify-content: center;
+          margin: 0;
+          margin-top: 0;
+  
+          .white-border-one {
+            margin: 0;
+          }
+        }
+      }
+    }
+  
+    .bcd-nav,
+    #portfolio-nav {
+      top: 33.7%;
+      left: -40px;
+      position: absolute;
+      right: auto;
+      transform: rotateY(180deg) scale(0.8);
+    }
+  
+  }
+  
+  @media screen and (max-width:320px) {
+    .portfolio-container {
+      .folio-col {
+        .portfolio-frst-col {
+          height: 370px;
+  
+          .animate-angle {
+            width: 148px;
+            height: 92px;
+            left: 30.14vw;
+            top: 43.6vw;
+          }
+        }
+      }
+    }
+    .new-class-bar {
+      padding: 0px 7px 0px 7px;
+    }
+  
+    .nav-component {
+      .top-content {
+        padding: 26px 10px !important;
+  
+        .home-btn {
+          width: 76px;
+          height: 76px;
+          font-size: 12px;
+        }
+      }
+    }
+  
+    .bcd-nav,
+    #portfolio-nav {
+      transform: rotateY(180deg) scale(0.7);
+      top: 29.1%;
+    }
+  }
+  
+  .nav-component {
+    z-index: 111;
+  }
+  

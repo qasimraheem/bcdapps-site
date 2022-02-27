@@ -1,0 +1,216 @@
+.services {
+  color: #000;
+  padding: 20px 0;
+.content-para{
+  max-width:350px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2px;
+    background: #000000;
+    text-align: center;
+    margin: 30px 0 0 0;
+
+    .main-box {
+      background-color: #FFCB05;
+      display: flex;
+      border-top: 1px solid #FFCB05;
+    }
+
+    .side1 {
+      padding: 0 2px 2px 0;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 100% 87%, 91% 100%, 0 100%, 0 100%, 0 0);
+    }
+
+    .side11 {
+      padding: 8px 0 0 0;
+      clip-path: polygon(0 0, 91% 0, 100% 13%, 100% 100%, 100% 101%, 0 101%, 0 100%, 0 0);
+    }
+
+    .side12 {
+      border-right: 1px solid #FFCB05;
+      padding: 0 0 4px 8px;
+      clip-path: polygon(0 0, 100% 0, 101% 0, 101% 100%, 100% 100%, 9% 100%, 0 87%, 0 0);
+    }
+
+    .side13 {
+      border-right: 1px solid #FFCB05;
+      padding: 8px 0 0 8px;
+      clip-path: polygon(9% 0, 100% 0, 101% 0, 101% 100%, 100% 101%, 0 101%, 0 100%, 0 13%);
+    }
+
+    .side2 {
+      padding: 0 0 2px 8px;
+      clip-path: polygon(0 -1px, 100% 0, 100% 0, 100% 87%, 91% 100%, 9% 100%, 0 87%, 0 0);
+    }
+
+    .side21 {
+      padding: 8px 2px 0 8px;
+      clip-path: polygon(9% 0, 91% 0, 100% 13%, 100% 100%, 100% 101%, 0 101%, 0 100%, 0 13%);
+    }
+
+    .box {
+      background-color: white;
+      padding: 0 15px 30px 15px;
+      position: relative;
+      font-size: 16px;
+      width: 100%;
+      height: 229px;
+      display: grid;
+      align-items: center;
+
+      .img-bg {
+        border-radius: 50%;
+        background-color: #ebebeb;
+        width: 94px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin: 30px auto 10px;
+        height: 94px;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+
+      p {
+        padding-top: 10px;
+        font-size: 0.98em;
+      }
+    }
+
+    .bottom-shadow {
+      display: flex;
+      box-shadow: 0px -225px 0 0 #DCAF02 inset;
+      padding: 0 8px 8px 0;
+      width: 100%;
+    }
+
+    .left-shadow {
+      display: flex;
+      box-shadow: -290px 0px 0 0 #DCAF02 inset;
+      padding: 0 8px 8px 0;
+      width: 100%;
+    }
+
+    .side1shadow {
+      box-shadow: 0px -233px 0 0 #DCAF02 inset;
+      clip-path: polygon(98% 0, 98% 6%, 100% 6%, 100% 87%, 91% 100%, 6% 100%, 6% 97%, 0 97%, 0 0);
+    }
+
+    .side11shadow {
+      clip-path: polygon(0 0, 88% 0, 100% 19%, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+    }
+
+    .side12shadow {
+      clip-path: polygon(0 0, 100% 0, 101% 0, 101% 100%, 100% 100%, 12% 100%, 0 84%, 0 0);
+    }
+
+    .side13shadow {
+      box-shadow: 0px -245px 0 0 #DCAF02 inset;
+      clip-path: polygon(98% 0, 98% 6%, 101% 6%, 101% 100%, 6% 100%, 6% 97%, 0 97%, 0 14%, 10% 0);
+    }
+
+    .side2shadow {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 100% 87%, 91% 100%, 11% 100%, 0 84%, 0 0);
+    }
+
+    .side21shadow {
+      clip-path: polygon(9% 0, 88% 0, 100% 16%, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 14%);
+    }
+  }
+}
+
+.custom-box {
+  height: 300px;
+  background: red;
+  position: relative;
+}
+
+.custom-box:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 80px solid white;
+  border-left: 80px solid red;
+  width: 0;
+}
+
+@media screen and (max-height:700px) {
+  .services {
+    .services-grid {
+        .box {
+        .img-bg {
+          border-radius: 50%;
+          background-color: #ebebeb;
+          width: 81px;
+          display: grid;
+          justify-content: center;
+          align-items: center;
+          margin: 30px auto 10px;
+          height: 81px;
+        }
+
+        h3 {
+          font-size: 1em;
+        }
+      }
+
+    }
+  }
+}
+
+// @media screen and (max-height:657px){
+//   .services .services-grid .box
+// }
+@media screen and (max-width:640px) {
+  .services {
+
+    .services-grid {
+      display: block;
+      background: inherit;
+
+      .side1,
+      .side11,
+      .side12,
+      .side13,
+      .side2,
+      .side21,
+      .side1shadow,
+      .side11shadow,
+      .side12shadow,
+      .side13shadow,
+      .side2shadow,
+      .side21shadow {
+        clip-path: inherit;
+        padding: 0 10px 10px 10px;
+      }
+
+      .side1shadow,
+      .side11shadow,
+      .side12shadow,
+      .side13shadow,
+      .side2shadow,
+      .side21shadow {
+        display: contents;
+      }
+
+      .box {
+        font-size: 14px;
+        padding: 0 10px 20px 10px;
+        width: 100%;
+
+        .img-bg {
+          width: 55px;
+          height: 55px;
+          margin: 20px auto 5px;
+        }
+      }
+    }
+  }
+}

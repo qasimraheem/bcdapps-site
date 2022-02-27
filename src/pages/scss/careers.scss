@@ -1,0 +1,269 @@
+body{
+    ::-webkit-scrollbar {
+      height: 0px;
+      background:white;
+      width: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #ffcb05;
+      border-radius: 30px;
+    }
+  }
+  .careers {
+    position: relative;
+    .cv-section {
+      display: grid;
+      grid-template-columns: 1fr min-content 1fr;
+      padding: 30px 0;
+      border: 2px dashed rgb(68, 68, 68);
+      border-radius: 20px;
+      justify-items: center;
+      max-width: 950px;
+      margin: 30px auto;
+      .post-cv {
+        .select-style {
+          background-color: rgb(255, 255, 255);
+          width: 361px;
+          height: 47px;
+          position: relative;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          overflow: hidden;
+          padding: 10px 5px;
+          &:before {
+            content: '';
+            background: url('/src/assets/images/select-icon.png') no-repeat;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            right: 0px;
+            background-size: contain;
+            pointer-events: none;
+          }
+          .custom-select {
+            padding: 5px 8px;
+            font-size: 14px;
+            width: 100%;
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+            outline: none;
+  
+            .multiselect__input{
+             width: 100%!important;
+            }
+           .multiselect__content-wrapper{
+            .multiselect__content{
+              width: 200px !important;
+            }
+           }
+          }
+        }
+      }
+      .multiselect__tags{
+        width: 100%;
+        padding: 10px;
+        height: 39px;
+        input{
+          width: 100%!important;
+          position: initial!important;
+          padding: 0px 5px 0px 0px !important;
+          border: none!important;
+          border-radius: 6px!important;
+        }
+      }
+      .dropdown{
+       background: white;   
+       border-radius: 6px; 
+       width: 293px;
+       .dropdown-toggle{
+        height: 47px;
+        .selected-tag{
+          margin: 6px 2px 0;
+        }
+       } 
+       .dropdown-menu{
+        max-height: 400px;
+        overflow-y: scroll;
+        height: 282px;
+         li{
+           margin: 0 5px 0 0;
+           a{
+            padding: 6px 0 6px 17px;
+            &:hover{
+              background-color: #d6aa01;
+            }
+           }
+         }
+         .highlight{
+           a{
+             background:#d6aa01;
+           }
+         }
+       }
+      } 
+      .upload-cv {
+        .resume-content {
+          display: flex;
+          color: #e9bb08;
+          .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            z-index: -1;
+          }
+          .custom-input-file {
+            border-radius: 10px;
+            padding: 14px 10px;
+            color: #000;
+            background-color: rgb(255, 203, 5);
+            width: 135px;
+            height: 47px;
+          }
+          .cv-icon {
+            margin: 0px 3px 0px 25px;
+          }
+          .cross-icon {
+            width: 19px;
+            height: 19px;
+          }
+        }
+      }
+    }
+    .job-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 20px;
+      .job-content {
+        border: 5px solid  rgb(255, 255, 255);
+        color: #fff;
+        padding: 25px 40px 60px 40px;
+        position: relative;
+        // transition: border-width 0.4s linear;
+        &:hover{
+          border-color: #e9bb08;
+          cursor: pointer;
+          border-width: 2px;
+  
+           .interested{
+            border: 8px solid #ffcb05;
+           }
+        }
+        .notify {
+          border-radius: 50%;
+          background-color: #ffcb05;
+          color: #fff;
+          font-size: 0.9em;
+          padding: 3px 8px;
+          margin: 0px 0px 0px 5px;
+        }
+        .flex-container {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px 0px;
+          box-sizing: border-box;
+        }
+        .interested {
+          border-radius: 50%;
+          border:15px solid rgb(197, 197, 197);
+          background-color: rgb(197, 197, 197);
+          width: 120px;
+          height: 120px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%,50%);
+          // transition: border-width 0.6s linear;
+          &:hover{
+            border-color: #e9bb08;
+            border-width: 10px;
+            cursor: pointer;
+          }
+          .intersested-inner {
+            display: flex;
+            border:15px solid rgb(220, 220, 220);
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            width:100%;
+            height: 100%;
+            font-size: 12px;
+            color: #000;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+  
+      }
+    }
+  }
+  
+  .main-heading1 {
+    font-size: 16px;
+    color: rgb(255, 203, 5);
+    padding: 12px 0;
+  }
+  .about-us-para{
+    // max-width: 350px;
+    max-width: 468px;
+    float: right;
+    text-align: right;
+  }
+  
+  .horizontal-line {
+    width: 1px;
+    background: rgb(68, 68, 68);
+    height: 100px;
+  }
+  @media screen and  (max-width:980px ){
+    .make-center{
+      .job-section {
+        grid-template-columns:none;
+        padding: 26px 10px;
+        grid-row-gap: 63px;
+      }
+    }
+  }
+  @media screen and  (max-width:767px ){
+    .careers{
+      .main-heading {
+        background-image: none;
+      }
+    }
+  }
+  @media screen and  (max-width:680px ){
+    .make-center{
+      .cv-section {
+        grid-template-columns: none;
+        margin: 46px auto;
+        .horizontal-line {
+          width: 199px;
+          height: 1px;
+          margin: 27px 0 24px 0;
+        }
+      } 
+    }
+  }
+  @media screen and  (max-height:600px ){
+    .careers.flex-display{
+      display: block;
+      padding: 25px 0 0 0;
+    }
+    .careers{
+      .cv-section{
+        padding: 20px 0 15px 0;
+        margin: 20px auto;
+      }
+    }
+  }
+  @media screen and  (max-width:600px ){
+    .make-center{
+      .white-circle {
+        padding: 88px 0px 0px 0;
+    }
+    }
+  }
+  

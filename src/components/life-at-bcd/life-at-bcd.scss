@@ -1,0 +1,459 @@
+.bcd-life {
+    display: grid;
+    grid-template-columns: 45% 50%;
+    grid-gap: 7%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .postion {
+      position: relative;
+  }
+
+  .slideshow {
+    transition: opacity .2s ease;
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.8);
+    display: table;
+  }
+  
+  .bcd-life-left-container {
+    display: grid;
+    align-content: center;
+    justify-content: right;
+    justify-items: right;
+  
+    &>h1 {
+      text-align: end;
+      margin: 0;
+    }
+  
+    &>p {
+      max-width: 468px;
+      float: right;
+      text-align: right;
+      color: #000;
+    }
+  }
+  
+  .bcd-life-right-container {
+    &>figure {
+      width: 473px;
+      height: 488px;
+      position: relative;
+  
+  
+      // background: red;
+      &>a {
+        position: absolute;
+        max-width: 100%;
+  
+        &>img {
+          max-width: 100%;
+          filter: grayscale(125%);
+          cursor: pointer;
+  
+          &:hover {
+            filter: grayscale(0);
+          }
+        }
+  
+      }
+  
+      .full-size-container {
+        height: 130px;
+        width: 130px;
+  
+        &::after {
+          content: '';
+          width: 18px;
+          height: 18px;
+          position: absolute;
+          background-color: #ffcb05;
+        }
+      }
+  
+      .small-size-container {
+        height: 61px;
+        width: 61px;
+  
+        &::after {
+          content: '';
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          background-color: #ffcb05;
+        }
+      }
+  
+      .bcdlife-img8-container-a {
+        top: 46.1%;
+        left: 56.45%;
+        transform: translate(-50%, -50%);
+  
+        &::after {
+          bottom: 0;
+          left: 0;
+        }
+      }
+  
+      .bcdlife-img2-container-a {
+        top: 6.3%;
+        left: 56.45%;
+        transform: translate(-50%, 0);
+  
+        &::after {
+          top: 0;
+          right: 0;
+        }
+  
+        &::before {
+          content: '';
+          width: 35px;
+          height: 35px;
+          position: absolute;
+          background: #fff;
+          left: -35px;
+          top: 15px;
+        }
+      }
+  
+      .bcdlife-img11-container-a {
+        top: 59.4%;
+        left: 56.45%;
+        transform: translate(-50%, 0);
+  
+        &::after {
+          bottom: 0;
+          right: 0;
+        }
+  
+        &::before {
+          content: '';
+          width: 35px;
+          height: 35px;
+          position: absolute;
+          background: #fff;
+          right: -35px;
+          top: 40px;
+        }
+      }
+  
+      .bcdlife-img1-container-a {
+        top: 16.55%;
+        left: 15.25%;
+  
+        &::after {
+          top: 0;
+          right: 0;
+        }
+  
+        &::before {
+          content: '';
+          width: 35px;
+          height: 35px;
+          position: absolute;
+          background: #ffcb05;
+          left: -35px;
+          bottom: 1px;
+        }
+      }
+  
+      .bcdlife-img7-container-a {
+        top: 43.2%;
+        left: 15.25%;
+  
+        &::after {
+          bottom: 0;
+          left: 0;
+        }
+      }
+  
+      .bcdlife-img10-container-a {
+        top: 69.7%;
+        left: 15.25%;
+  
+        &::after {
+          top: 0;
+          left: 0;
+        }
+      }
+  
+      .bcdlife-img3-container-a {
+        top: 14.5%;
+        left: 70.2%;
+  
+        &::after {
+          top: 0;
+          right: 0;
+        }
+      }
+  
+      .bcdlife-img9-container-a {
+        top: 41.1%;
+        left: 70.2%;
+  
+        &::after {
+          bottom: 0;
+          left: 0;
+        }
+      }
+  
+      .bcdlife-img4-container-a {
+        top: 2%;
+        left: 70.2%;
+  
+        &::after {
+          bottom: 0;
+          left: 0;
+        }
+      }
+  
+      .bcdlife-img5-container-a {
+        top: 43%;
+        left: 2.35%;
+  
+        &::after {
+          top: 0;
+          right: 0;
+        }
+      }
+  
+      .bcdlife-img6-container-a {
+        top: 55.5%;
+        left: 2.35%;
+  
+        &::after {
+          top: 0;
+          right: 0;
+        }
+      }
+  
+      .bcdlife-img12-container-a {
+        top: 86%;
+        left: 42.8%;
+  
+        &::after {
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  
+  }
+  
+  
+  
+  
+  @media screen and (max-width:1217px) {
+    .bcd-life {
+      grid-gap: 3%;
+    }
+  }
+  
+  @media screen and (max-width:1172px) {
+    .bcd-life {
+      grid-template-columns: none;
+      grid-gap: 0;
+    }
+  
+    .bcd-life-left-container>p {
+      float: none;
+      text-align: center;
+    }
+  
+    .bcd-life-left-container {
+      justify-items: center;
+    }
+  }
+  
+  @media screen and (max-width:509px) {
+    .bcd-life {
+      grid-template-rows: 350px 450px;
+      align-items: center;
+    }
+  
+    .bcd-life-left-container {
+      padding: 15px;
+    }
+  
+    .bcd-life-right-container {
+      &>figure {
+        width: 400px;
+        height: 414px;
+        margin: 0 auto;
+  
+        .full-size-container {
+          width: 110px;
+          height: 110px;
+  
+          &::after {
+            width: 13px;
+            height: 13px;
+          }
+  
+        }
+  
+        .bcdlife-img2-container-a {
+          &::before {
+            width: 28px;
+            height: 28px;
+            left: -28px;
+            top: 15px;
+          }
+        }
+  
+        .bcdlife-img1-container-a {
+          &::before {
+            width: 28px;
+            height: 28px;
+            left: -28px;
+            bottom: 1px;
+          }
+        }
+  
+        .bcdlife-img11-container-a {
+          &::before {
+            width: 28px;
+            height: 28px;
+            right: -28px;
+            top: 34px;
+          }
+        }
+  
+        .small-size-container {
+          height: 52px;
+          width: 52px;
+  
+          &::after {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width:390px) {
+    .bcd-life-right-container {
+      &>figure {
+        width: 363px;
+        height: 376px; ///@at-root
+        margin: 0 auto;
+  
+        .full-size-container {
+          width: 100px;
+          height: 100px;
+  
+          &::after {
+            width: 12px;
+            height: 12px;
+          }
+  
+        }
+  
+        .bcdlife-img2-container-a {
+          &::before {
+            width: 25px;
+            height: 25px;
+            left: -25px;
+            top: 14px; ///@at-root
+          }
+        }
+  
+        .bcdlife-img1-container-a {
+          &::before {
+            width: 25px;
+            height: 25px;
+            left: -25px;
+            bottom: 0px; ////@at-root
+          }
+        }
+  
+        .bcdlife-img11-container-a {
+          &::before {
+            width: 25px;
+            height: 25px;
+            right: -25px;
+            top: 31px; //@at-root
+          }
+        }
+  
+        .small-size-container {
+  
+          height: 47px;
+          width: 47px; ////
+  
+          &::after {
+            width: 13px;
+            height: 13px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width:373px) {
+    .bcd-life-right-container {
+      &>figure {
+        width: 318px;
+        height: 332px;
+        margin: 0 auto;
+  
+        .full-size-container {
+          width: 88px;
+          height: 88px;
+  
+          &::after {
+            width: 12px;
+            height: 12px;
+          }
+  
+        }
+  
+        .bcdlife-img2-container-a {
+          &::before {
+            width: 23px;
+            height: 23px;
+            left: -22px;
+            top: 11px;
+          }
+        }
+  
+        .bcdlife-img1-container-a {
+          &::before {
+            width: 23px;
+            height: 23px;
+            left: -22px;
+            bottom: 0px;
+          }
+        }
+  
+        .bcdlife-img11-container-a {
+          &::before {
+            width: 23px;
+            height: 23px;
+            right: -22px;
+            top: 27px;
+          }
+        }
+  
+        .small-size-container {
+          height: 41px;
+          width: 41px;
+  
+          &::after {
+            width: 13px;
+            height: 13px;
+          }
+        }
+      }
+    }
+  }
+  

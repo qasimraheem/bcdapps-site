@@ -1,0 +1,263 @@
+$white: rgb(255, 255, 255);
+.technologies{
+  padding: 1em 0 6em 0;
+}
+.tec-container {
+  display: grid;
+  grid-template-columns: max-content 500px;
+  justify-content: center;
+  align-items: center;
+  .apps{
+    height: 650px;
+    position: relative;
+    .back-rect{
+      position: absolute;
+      height: 245px;
+      width: 245px;
+    }
+  }
+  .app{
+    grid-template-columns: 1fr max-content;
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    position: absolute;
+    height: 245px;
+    width: 245px;
+    .vue{
+      position: relative;
+      transform: scale(1.2);
+      margin: 0 -7px -3px 0;
+      z-index: 1;
+      img{
+
+      }
+      figcaption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,-50%);
+        font-size: 0.8em;
+      }
+    }
+    .reverse-rot{
+      transform: scale(1.2) rotate(-90deg);
+    }
+  }
+  .rot-90{
+    transform: rotate(90deg);
+  }
+  .neg-mgn{
+    margin: 0 -25px 0 0;
+    z-index: 0;
+    max-width: 100%;
+    width: 87px;
+  }
+  .app1{
+    top: 5px;
+    right: 26%;
+  }
+  .app2{
+    grid-template-columns:max-content max-content;
+    top: 20%;
+    left:0%;
+    .neg-mgn{
+      margin: 0 0 0 -15px;
+    }
+  }
+  .app3{
+    top: 35.5%;
+    left: 30%;
+  }
+ 
+  .app4{
+    right: 9%;
+    bottom: -2.4%;
+    img.neg-mgn{
+      margin: 0 -15px 0 0;
+      width: 70px;
+      height: 80px;
+    }
+  }
+  .app5{
+    left: 5%;
+    bottom: 7.4%;
+  }
+  .app6{
+    left: 55.1%;
+    top: 16.5%;
+  }
+  .app7{
+    top: 45.5%;
+    left: 67.3%;
+  }
+}
+.technology{
+  color: $white;
+  margin: 0 -10px -85px 0;
+  .heading{
+    display: inline-block;
+    font-size: 3.2em;
+    padding: 20px 15px 10px 0;
+    background: url("../../images/Circle3.svg") no-repeat top right;
+  }
+  p{
+    margin: 10px 0 0 0;
+    text-align: right;
+    max-width: 320px;
+  }
+}
+
+//media-quries//
+@media screen and  (max-height:720px ){
+  .tec-container {
+    .apps{
+      height: 540px;
+      .back-rect{
+        height: 210px;
+        width: 220px;
+      }
+    }
+    .app{
+      height: 210px;
+      width: 220px;
+      .vue{
+        img{
+          height: 80px;
+          width:80px;
+        }
+        figcaption{
+          font-size: 0.7em;
+        }
+      }
+    }
+    .app1{
+      top: 0;
+      right: 34%;
+    }
+    .app2{
+      top: 20%;
+      left: 0;
+    }
+    .app3{
+      top: 34%;
+      left: 28.5%;
+    }
+    .app4{
+      right: 15.8%;
+      bottom: -2.4%;
+      img.neg-mgn{
+        width: 60px;
+        height: 70px;
+      }
+    }
+    .app5{
+      left: 6.8%;
+      bottom: 7%;
+    }
+  }
+}
+@media screen and  (max-width:1020px ){
+  .tec-container{
+    display: block;
+    text-align: center;
+    .technology{
+      margin: 0 0 30px 0;
+    }
+    .apps{
+      display: flex;
+      height: 100%;
+      flex-wrap: wrap;
+      margin: 29px 29px 0 29px;
+      .back-rect{
+        display: none;
+      }
+      &>:last-child{
+        display: contents;
+      }
+    }
+    .app2{
+      .neg-mgn{
+        margin: 0;
+      }
+    }
+    .app4{
+      img.neg-mgn{
+        margin: 0;
+        max-width: 100%;
+      }
+    }
+    .app{
+      position: initial;
+      background-color: white;
+      height: 100%;
+      width: 100%;
+      transform: rotate(0deg);
+      align-items: end;
+      justify-items: center;
+      width: 90px;
+      height: 157px;
+      justify-content: center;
+      margin: 2px;
+      .reverse-rot {
+        transform: scale(1);
+      }
+      img{
+        margin: 0;
+      }
+      .vue{
+        background-color:yellow;
+        transform: scale(1);
+        margin: 0;
+        grid-row: 2;
+        padding: 15px 0px;
+        width: 100%;
+        text-align: center;
+        img{
+         display: none;
+        }
+        figcaption{
+          position: initial;
+          transform: translate(0);
+        }
+      }
+    }
+    .app5{
+      background-color: #373737;
+    }
+  }
+}
+@media screen and  (max-width:540px){
+  .technology{
+    .heading {
+      font-size: 2.4em;
+      padding: 37px 15px 10px 0;
+    }
+  }
+}
+@media screen and  (max-width:390px ){
+  .tec-container {
+    .apps {
+      grid-template-columns: repeat(2,max-content);
+      justify-content: center;
+      .app{
+        img{
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and  (max-width:390px ){
+  .tec-container {
+    .apps {
+      &>:last-child{
+        display:contents;
+        &>:last-child{
+         grid-column: 1/3;
+        }
+      }
+    }
+  }
+}

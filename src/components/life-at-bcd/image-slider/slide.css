@@ -1,0 +1,107 @@
+.btn-close {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+button {
+    outline: none;
+}
+
+.btn-prev {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    cursor: pointer;
+    font-size: 40px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    left: 0;
+}
+
+.zoomed-img {
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    overflow: hidden;
+    max-width: 100vh;
+    top:8rem;
+    margin: 0.5rem auto 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 60vh;
+    border-radius: 12px;
+    background-color: #000;
+}
+
+.current-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.btn-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    cursor: pointer;
+    font-size: 40px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    right: 0;
+}
+
+.rest-gallery {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    bottom: 10px;
+    margin: auto;
+    max-width: 100vh;
+    white-space: nowrap;
+    left: 0.5rem;
+    right: 0.5rem;
+}
+.image-num{
+   color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.all-images {
+    overflow: visible;
+    display: block;
+    height: 100px;
+    white-space: nowrap;
+    transition: all .2s ease-in-out;
+    width: 100%;
+}
+
+.slide-gallery-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: inline-block;
+    float: none;
+    margin-right: 20px;
+    cursor: pointer;
+    opacity: .6;
+    border-radius: 8px;
+    top:400px;
+    /* transform: translate(763px,0px); */
+}

@@ -1,0 +1,21 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="62" height="47" viewBox="0 0 62 47">
+
+  <defs>
+    <style>
+      .cls-1 {
+      fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
+      fill-rule: evenodd;
+      }
+
+      .cls-2 {
+      fill: #ffcb05;
+      }
+    </style>
+  </defs>
+  <path id="Rectangle_3_copy_3"  class="cls-1" d="M51.072,6.877L54.9,40.5H9.738L13.565,6.877H51.072ZM48.393,9.552L52.22,37.827h-39.8L16.244,9.552H48.393ZM31.188,17.188h2.656V35.156H31.188V17.188ZM7.063,33.625h43.25v2.688H7.063V33.625Z"/>
+  <path id="Rectangle_3_copy_3-2" class="cls-2" d="M0,27.531H19.5V47H0V27.531Zm44.406,1.125H62V46.25H44.406V28.656ZM22.969,0H40.563V17.594H22.969V0Z"/>
+</svg>
