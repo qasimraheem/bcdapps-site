@@ -6,23 +6,29 @@ import headerLogoIcon from "../../images/header-logo.png";
 
 const Home = () => {
   const msg = "Welcome to your Gatsby-app";
-  
+
   function portfolio() {
-    $('html, body').animate({
-      scrollTop: $('#portfolio').offset().top
-    }, 'slow');
+    $("html, body").animate(
+      {
+        scrollTop: $("#portfolio").offset().top,
+      },
+      "slow"
+    );
   }
 
-  function moveToPage(id) {
-    $('html, body').animate({
-      scrollTop: $(id).offset().top
-    }, 'slow');
-  }
+  // function moveToPage(id) {
+  //   $('html, body').animate({
+  //     scrollTop: $(id).offset().top
+  //   }, 'slow');
+  // }
 
   function down() {
-    $('html, body').animate({
-      scrollTop: $('#contact_us').offset().top
-    }, 'slow');
+    $("html, body").animate(
+      {
+        scrollTop: $("#contact_us").offset().top,
+      },
+      "slow"
+    );
   }
   // viewHandler(){
   //     $('.spans').css({"color": "#000000","visibility":"hidden"});
@@ -32,7 +38,7 @@ const Home = () => {
   // }
 
   return (
-    <section id="home" className="home white-bg flex-display">
+    <section id="home" className="home white-bg flex-display section">
       <div>
         <div className="container home-container">
           <div className="home-content black-txt">
@@ -40,15 +46,23 @@ const Home = () => {
             <h1 className="main-heading">
               <span className="yellow-txt">into</span> Reality
             </h1>
-            <p className="mt20 content-para">
-              Providing you the best blockchain solutions
+            <p style={{marginBottom:"-1rem"}} className="mt20 content-para">
+              Providing you the best blockchain solutions<br/>
+              that fit your needs
             </p>
-            <p className="content-para">that fit your needs</p>
+            <p className="content-para"></p>
             <div className="hire-us-container">
-              <a className="bcd-btn" onClick={() => portfolio()}>View Portfolio</a>
+              <a
+                className="bcd-btn"
+                style={{ textDecoration: "none" }}
+                onClick={() => portfolio()}
+              >
+                View Portfolio
+              </a>
               <button
                 className="bcd-btn hire invisible-hire-btn2"
-                id="hire" onClick={() => down()}
+                id="hire"
+                onClick={() => down()}
               >
                 Hire Us
               </button>

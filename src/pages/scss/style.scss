@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@ section{
   font-size: 1em;
 }
 .container {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 button,input{
@@ -77,7 +78,7 @@ a {
   font-size: 30px;
 }
 .pad-all{
-  padding: 26px 8px 11px 0;
+  padding: 26px 8px 0px 0;
 }
 .pad-all1 {
   padding: 30px 0px 15px 0px;
@@ -173,14 +174,14 @@ a {
     height: 100px;
   }
   .hire {
-    padding: 15px 25px;
+    padding: 13px 25px;
   }
   .top-content {
     display: grid;
     grid-template-columns: max-content max-content;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0;
+    padding: 30px 0px;
     .home-btn {
       border-width: 15px;
       border-color: #d6aa01;
@@ -266,7 +267,7 @@ a {
 }
 @media screen and  (max-width:1280px ){
   .container {
-    max-width:100%;
+    max-width:1280px;
   }
   section{
     height: 100%;

@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./scss/style.scss";
 import $ from "jquery";
-import { navigate, Link } from "gatsby";
 import bcdLogoImg from "../images/bcd-logo.png";
 import menuIcon from "../images/menu-icon.svg";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
@@ -19,9 +18,7 @@ import _ from "lodash";
 
 const IndexPage = () => {
   const [show, setShow] = useState(false);
-  const [position, setPosition] = useState();
-  const [url, seturl] = useState("");
- 
+
   function click() {
     $(".menu").fadeToggle("slow");
   }
@@ -56,201 +53,195 @@ const IndexPage = () => {
   function mounted() {
     var that = this;
     var r;
-    $('.top-btn').hide();
-    $('.nav-items').css('color', 'white');
-    $('.spans').css('visibility', 'hidden');
-    $('.spans').eq(0).css({
-      "color": "#000000",
-      'visibility': 'visible'
+    $(".top-btn").hide();
+    $(".nav-items").css("color", "white");
+    $(".spans").css("visibility", "hidden");
+    $(".spans").eq(0).css({
+      color: "#000000",
+      visibility: "visible",
     });
 
     /////////
-    $(window).scroll(function() {
+    $(window).scroll(function () {
       var position = $(this).scrollTop;
 
       if ($(document).scrollTop() > 100) {
-        $('.top-btn').fadeIn('slow');
+        $(".top-btn").fadeIn("slow");
       } else {
-        $('.top-btn').fadeOut('slow');
+        $(".top-btn").fadeOut("slow");
       }
-      if ($(document).scrollTop() < (window.innerHeight) * 0.6) {
-
-        $('.spans').css('visibility', 'hidden');
-        $('.spans').eq(0).css({
-          "color": "#000000",
-          'visibility': 'visible'
+      if ($(document).scrollTop() < window.innerHeight * 0.6) {
+        $(".spans").css("visibility", "hidden");
+        $(".spans").eq(0).css({
+          color: "#000000",
+          visibility: "visible",
         });
-        $('.nav-items').removeClass("active-white-item");
+        $(".nav-items").removeClass("active-white-item");
         // $('.nav-items').eq(2).removeClass("active-white-item");
-        $('.nav-items').eq(0).addClass("active-white-item");
-
+        $(".nav-items").eq(0).addClass("active-white-item");
       }
 
       var position = window.pageYOffset;
-      
 
-      $('.section').each(function() {
+      $(".section").each(function () {
         var target = $(this).offset().top;
-        var id = $(this).attr('id');
+        let id = "";
+        id = $(this).attr("id");
 
+        var navLinks = $("li a");
 
-        var navLinks = $('li a');
-
-        if (position >= target - (window.innerHeight * 0.5)) {
-          if (id == 'home' || id == 'services' || id == 'portfolio' || id == 'partners' || id == 'products' || id=='contact_us' || id=='bcd-life') {
-            navLinks.removeClass('active-white-item');
-            navLinks.removeClass('active-black-item');
-            $('li a[href="#' + id + '"]').addClass('active-white-item');
+        if (position >= target - window.innerHeight * 0.5) {
+          if (id === "home") {
+            id = "home";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(0).css({
+              color: "black",
+              visibility: "visible",
+            });
+          } else if (id === "about") {
+            id = "about";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(1).css({
+              color: "#FFCB05",
+              visibility: "visible",
+            });
+          } else if (id === "services") {
+            id = "services";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(2).css({
+              color: "black",
+              visibility: "visible",
+            });
+          } else if (id === "portfolio") {
+            id = "portfolio";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(3).css({
+              color: "black",
+              visibility: "visible",
+            });
+          } else if (id === "technologies") {
+            id = "technologies";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(4).css({
+              color: "#0007700",
+              visibility: "visible",
+            });
+          } else if (id === "products") {
+            id = "products";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(5).css({
+              color: "black",
+              visibility: "visible",
+            });
+          } else if (id === "partners") {
+            id = "partners";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(6).css({
+              color: "black",
+              visibility: "visible",
+            });
+          } else if (id === "bcd-life") {
+            id = "bcd-life";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(7).css({
+              color: "#000",
+              visibility: "visible",
+            });
+          } else if (id === "contact_us") {
+            id = "contact_us";
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $(".spans").css("visibility", "hidden");
+            $(".spans").eq(8).css({
+              color: "#000",
+              visibility: "visible",
+            });
           } else {
-            navLinks.removeClass('active-white-item');
-            navLinks.removeClass('active-black-item');
-            $('li a[href="#' + id + '"]').addClass('active-black-item');
-            // URL('uhuhuu');
-          }
-
-
-          if (id == 'home') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(0).css({
-              "color": "black",
-              'visibility': 'visible'
-            });
-
-
-
-            // that.$router.push('#home');
-          }
-          if (id == 'about') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(1).css({
-              "color": "#FFCB05",
-              'visibility': 'visible'
-            });
-
-          }
-          if (id == 'services') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(2).css({
-              "color": "black",
-              'visibility': 'visible'
-            });
-
-          }
-          if (id == 'portfolio') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(3).css({
-              "color": "black",
-              'visibility': 'visible'
-            });
-            // that.$router.push('#portfolio');
-          }
-          if (id == 'technologies') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(4).css({
-              "color": "#0007700",
-              'visibility': 'visible'
-            });
-            // that.$router.push('#technologies');
-          }
-          if (id == 'products') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(5).css({
-              "color": "black",
-              'visibility': 'visible'
-            });
-            // that.$router.push('#technologies');
-          }
-          if (id == 'partners') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(6).css({
-              "color": "black",
-              'visibility': 'visible'
-            });
-            // that.$router.push('#partners');
-          }
-          // if (id == 'our_team') {
-          //   $('.spans').css('visibility', 'hidden');
-          //   $('.spans').eq(7).css({
-          //     "color": "#FFCB05",
-          //     'visibility': 'visible'
-          //   });
-          // }
-          if (id == 'bcd-life') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(7).css({
-              "color": "#000",
-              'visibility': 'visible'
-            });
-          }
-
-          if (id == 'contact_us') {
-            $('.spans').css('visibility', 'hidden');
-            $('.spans').eq(8).css({
-              "color": "#000",
-              'visibility': 'visible'
-            });
-            // that.$router.push('#contact-us');
+            navLinks.removeClass("active-white-item");
+            navLinks.removeClass("active-black-item");
+            $('li a[href="#' + id + '"]').addClass("active-black-item");
           }
         }
       });
-
-
     });
 
-    $(window).scroll(_.throttle(function() {
-
-      if ($('.spans').eq(0).css('visibility') === 'visible') {
-        window.history.replaceState(null, null, '#home');
-        return false;
-      }
-      if ($('.spans').eq(1).css('visibility') === 'visible') {
-        window.history.replaceState(null, null, '#about_us');
-        return false;
-      }
-      if ($('.spans').eq(2).css('visibility') === 'visible') {
-        window.history.pushState(null, null, '#services');
-        return false;
-      }
-      if ($('.spans').eq(3).css('visibility') === 'visible') {
-        window.history.pushState(null, null, '#portfolio');
-        return false;
-      }
-      if ($('.spans').eq(4).css('visibility') === 'visible') {
-        window.history.pushState(null, null, '#technologies');
-        return false;
-      }
-      if ($('.spans').eq(5).css('visibility') === 'visible') {
-        window.history.pushState(null, null, '#partners');
-        return false;
-      }
-      // if ($('.spans').eq(6).css('visibility') === 'visible') {
-      //   history.pushState(null, null, '#our_team');
-      //   return false;
-      // }
-      if ($('.spans').eq(6).css('visibility') === 'visible') {
-        window.history.pushState(null, null, '#life_at_bcd');
-        return false;
-      }
-      if ($('.spans').eq(7).css('visibility') === 'visible') {
-        window.history.pushState(null, null, '#contact_us');
-        return false;
-      }
-    }, 500));
+    $(window).scroll(
+      _.throttle(function () {
+        if ($(".spans").eq(0).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#home");
+          return show;
+        }
+        if ($(".spans").eq(1).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#about");
+          return show;
+        }
+        if ($(".spans").eq(2).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#services");
+          return show;
+        }
+        if ($(".spans").eq(3).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#portfolio");
+          return show;
+        }
+        if ($(".spans").eq(4).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#technologies");
+          return show;
+        }
+        if ($(".spans").eq(5).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#products");
+          return show;
+        }
+        if ($(".spans").eq(6).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#partners");
+          return show;
+        }
+        if ($(".spans").eq(7).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#life_at_bcd");
+          return show;
+        }
+        if ($(".spans").eq(8).css("visibility") === "visible") {
+          window.history.pushState(null, null, "#contact_us");
+          return show;
+        }
+      }, 500)
+    );
 
     // ($('#yourElement').css('position') == 'absolute')
   }
 
-
-  
   useEffect(() => {
-     mounted();
-     
+    mounted();
   }, []);
 
   return (
     <div>
       <div className="nav-component">
-        <div className="top-content container">
+        <div className="top-content" style={{margin:"0 auto",width:"97%" }}>
           <img className="logo" src={bcdLogoImg} />
           <div className="nav-menu">
             <button
@@ -353,16 +344,16 @@ const IndexPage = () => {
         <HiOutlineChevronDoubleUp />
         <p>Top</p>
       </button>
-      <Home className="section" />
-      <About className="section" />
-      <Services className="section" />
-      <Portfolio className="section" />
-      <Technologies className="section" />
-      <Products className="section" />
-      <Partners className="section" />
-      {/* <Team className="section" /> */}
-      <LifeAtBcd className="section" />
-      <Contact className="section" />
+      <Home />
+      <About />
+      <Services />
+      <Portfolio />
+      <Technologies />
+      <Products />
+      <Partners />
+      {/* <Team/> */}
+      <LifeAtBcd />
+      <Contact />
     </div>
   );
 };

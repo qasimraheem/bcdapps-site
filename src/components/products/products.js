@@ -5,7 +5,7 @@ import blockChain from "../../images/block-chain.png";
 
 const Products = () => {
   return (
-    <section id="products" className="yellow-bg flex-display">
+    <section id="products" className="yellow-bg flex-display section">
       <div>
         <div className="container products">
           <div className="technology">

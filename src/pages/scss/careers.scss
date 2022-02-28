@@ -40,8 +40,8 @@ body{
             background-size: contain;
             pointer-events: none;
           }
-          .custom-select {
-            padding: 5px 8px;
+          select {
+            padding: 30px 8px;
             font-size: 14px;
             width: 100%;
             border: none;
@@ -137,10 +137,11 @@ body{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-column-gap: 20px;
+      padding: 0 14px;
       .job-content {
         border: 5px solid  rgb(255, 255, 255);
         color: #fff;
-        padding: 25px 40px 60px 40px;
+        padding: 25px 40px 35px 40px;
         position: relative;
         // transition: border-width 0.4s linear;
         &:hover{
@@ -163,7 +164,7 @@ body{
         .flex-container {
           display: flex;
           justify-content: space-between;
-          padding: 5px 0px;
+          padding: 2px 0px;
           box-sizing: border-box;
         }
         .interested {

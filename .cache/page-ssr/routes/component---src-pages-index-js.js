@@ -3887,7 +3887,7 @@ const About = () => {
   const msg = "Welcome to your Gatsby-app";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "about",
-    className: "about black-bg flex-display about-section"
+    className: "about black-bg flex-display about-section section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container custom-grid"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4130,6 +4130,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+
 
 
 
@@ -4169,9 +4171,7 @@ const Contact = () => {
   };
 
   function currentOpening() {
-    this.$router.push({
-      path: "careers"
-    });
+    (0,gatsby__WEBPACK_IMPORTED_MODULE_9__.navigate)("careers");
   }
 
   function showLoader() {
@@ -4196,7 +4196,7 @@ const Contact = () => {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {}, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "contact_us",
-    className: "flex-display contact_us white-bg"
+    className: "flex-display contact_us white-bg section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "form"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
@@ -4416,7 +4416,7 @@ const Home = () => {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "home",
-    className: "home white-bg flex-display"
+    className: "home white-bg flex-display section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container home-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4435,6 +4435,9 @@ const Home = () => {
     className: "hire-us-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     className: "bcd-btn",
+    style: {
+      textDecoration: "none"
+    },
     onClick: () => portfolio()
   }, "View Portfolio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "bcd-btn hire invisible-hire-btn2",
@@ -4636,18 +4639,18 @@ const LifeAtBcd = () => {
       setIndex(index - 1);
       return setImg(Slider[index - 1]);
     } else {
-      setImg("");
-      setShowSlider('none');
+      setIndex(Slider.length - 1);
+      setImg(Slider[index]);
     }
   }
 
   function next() {
-    if (index > 0 && index < Slider.length - 1) {
+    if (index < Slider.length - 1) {
       setIndex(index + 1);
       setImg(Slider[index + 1]);
     } else {
-      setImg("");
-      setShowSlider("none");
+      setIndex(0);
+      setImg(Slider[index]); // setShowSlider("none");
     }
   }
 
@@ -4658,7 +4661,7 @@ const LifeAtBcd = () => {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "bcd-life",
-    className: "flex-display bcd-life yellow-bg section postion"
+    className: "flex-display bcd-life yellow-bg section postion section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "bcd-life-left-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
@@ -4863,16 +4866,18 @@ const Navbar = () => {
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     className: "bcd-nav bcd-nav2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, links.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "nav_ul"
+  }, links.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     onClick: () => selectNav(item),
     key: item.index
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    className: selectedNav.index === item.index ? 'active-white-item nav-items' :  true ? 'makeBlack active-black-item nav-items' : 0,
+    className: (selectedNav === null || selectedNav === void 0 ? void 0 : selectedNav.index) === item.index && 'active-white-item nav-items' || item.index === selectedNav.index && item.color === 'black' ? 'active-black-item nav-items' : "nav-items",
     href: item.link
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "spans"
   }, item.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "nav-circle"
+    className: "nav-circle"
   }))))));
 };
 
@@ -4912,7 +4917,7 @@ const Partners = () => {
   const msg = "Welcome to Your Gatsby-app";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "partners",
-    className: "partners flex-display  white-bg"
+    className: "partners flex-display  white-bg section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container partners-container tec-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4940,6 +4945,9 @@ const Partners = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "line-txt"
   }, "Expanse"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    style: {
+      textDecoration: "none"
+    },
     href: "https://expanse.tech/"
   }, "Website >>"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "expanse"
@@ -4950,6 +4958,9 @@ const Partners = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "line-txt"
   }, "IdeoFusion"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    style: {
+      textDecoration: "none"
+    },
     href: "https://www.ideofuzion.com/"
   }, "Website >>"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "expanse"
@@ -4963,6 +4974,9 @@ const Partners = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "line-txt"
   }, "Reactive Space"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    style: {
+      textDecoration: "none"
+    },
     href: "https://reactivespace.com/"
   }, "Website >>"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "expanse"
@@ -4973,6 +4987,9 @@ const Partners = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "line-txt"
   }, "RNS Solution"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    style: {
+      textDecoration: "none"
+    },
     href: "https://rnssol.com/"
   }, "Website >>"))))));
 };
@@ -4997,7 +5014,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./portfolio.scss */ "./src/components/portfolio/portfolio.scss");
 /* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _images_bcd_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/bcd-logo.png */ "./src/images/bcd-logo.png");
-/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/io */ "./node_modules/react-icons/io/index.esm.js");
+/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/io */ "./node_modules/react-icons/io/index.esm.js");
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+
 
 
 
@@ -5048,17 +5067,23 @@ const Portfolio = () => {
   }
 
   function add() {
-    setSelectedPortfolio(full[selectedPortfolio.id + 1]);
+    if (selectedPortfolio.id < 4) {
+      setSelectedPortfolio(full[selectedPortfolio.id + 1]);
+    } else {
+      setSelectedPortfolio(full[0]);
+    }
   }
 
   function subtract() {
-    setSelectedPortfolio(full[selectedPortfolio.id - 1]);
+    if (selectedPortfolio.id > 0) {
+      setSelectedPortfolio(full[selectedPortfolio.id - 1]);
+    } else {
+      setSelectedPortfolio(full[full.length - 1]);
+    }
   }
 
   function goToPorfolio() {
-    this.$router.push({
-      path: 'view-portfolio'
-    });
+    (0,gatsby__WEBPACK_IMPORTED_MODULE_3__.navigate)('viewPortfolio');
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -5067,7 +5092,7 @@ const Portfolio = () => {
   console.log("created::", selectedPortfolio.id);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "portfolio",
-    className: "portfolio flex-display white-bg"
+    className: "portfolio flex-display white-bg section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "portfolio-grid container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
@@ -5077,8 +5102,8 @@ const Portfolio = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: full.indexOf(selectedPortfolio) !== 0 ? "movement back" : 'disabledBtn',
     onClick: () => subtract()
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io__WEBPACK_IMPORTED_MODULE_3__.IoIosArrowUp, {
-    className: "angle-up"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io__WEBPACK_IMPORTED_MODULE_4__.IoIosArrowUp, {
+    className: "color"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "slide-show"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5107,8 +5132,13 @@ const Portfolio = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, selectedPortfolio.sheettxt), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: full.indexOf(selectPortfolio) !== full.length - 1 ? "movement forwardBtn" : 'disabledBtn',
     onClick: () => add()
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io__WEBPACK_IMPORTED_MODULE_3__.IoIosArrowDown, null))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io__WEBPACK_IMPORTED_MODULE_4__.IoIosArrowDown, {
+    className: "color"
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     className: "bcd-btn",
+    style: {
+      textDecoration: "none"
+    },
     onClick: () => goToPorfolio()
   }, "View Full Portfolio")))));
 };
@@ -5142,7 +5172,7 @@ __webpack_require__.r(__webpack_exports__);
 const Products = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "products",
-    className: "yellow-bg flex-display"
+    className: "yellow-bg flex-display section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container products"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5217,7 +5247,7 @@ const Services = () => {
   const props = ["about"];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "services",
-    className: "flex-display services yellow-bg"
+    className: "flex-display services yellow-bg section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: " container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5380,7 +5410,7 @@ __webpack_require__.r(__webpack_exports__);
 const Technologies = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "technologies",
-    className: "flex-display technologies black-bg"
+    className: "flex-display technologies black-bg section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "tec-container container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5504,13 +5534,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/style.scss */ "./src/pages/scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/throttle */ "./node_modules/lodash/throttle.js");
+/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scss/style.scss */ "./src/pages/scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _images_bcd_logo_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../images/bcd-logo.png */ "./src/images/bcd-logo.png");
 /* harmony import */ var _images_menu_icon_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/menu-icon.svg */ "./src/images/menu-icon.svg");
 /* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-icons/hi */ "./node_modules/react-icons/hi/index.esm.js");
@@ -5546,307 +5577,278 @@ const IndexPage = () => {
   const {
     0: show,
     1: setShow
-  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const {
-    0: position,
-    1: setPosition
-  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
-  const {
-    0: url,
-    1: seturl
-  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
 
   function click() {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(".menu").fadeToggle("slow");
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()(".menu").fadeToggle("slow");
   }
 
   function Up() {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()("html, body").animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()("#home").offset().top
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()("html, body").animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_3___default()("#home").offset().top
     }, "slow");
   }
 
   function moveToPage(id) {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()("html, body").animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()(id).offset().top
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()("html, body").animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_3___default()(id).offset().top
     }, "slow");
     setShow(false);
   }
 
   function down() {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()("html, body").animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()("#contact_us").offset().top
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()("html, body").animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_3___default()("#contact_us").offset().top
     }, "slow");
   }
 
   function mounted() {
     var that = this;
     var r;
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.top-btn').hide();
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.nav-items').css('color', 'white');
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').css('visibility', 'hidden');
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(0).css({
-      "color": "#000000",
-      'visibility': 'visible'
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()(".top-btn").hide();
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()(".nav-items").css("color", "white");
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(0).css({
+      color: "#000000",
+      visibility: "visible"
     }); /////////
 
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scroll(function () {
-      var position = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).scrollTop;
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()(window).scroll(function () {
+      var position = jquery__WEBPACK_IMPORTED_MODULE_3___default()(this).scrollTop;
 
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).scrollTop() > 100) {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.top-btn').fadeIn('slow');
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(document).scrollTop() > 100) {
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".top-btn").fadeIn("slow");
       } else {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.top-btn').fadeOut('slow');
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".top-btn").fadeOut("slow");
       }
 
-      if (jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).scrollTop() < window.innerHeight * 0.6) {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').css('visibility', 'hidden');
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(0).css({
-          "color": "#000000",
-          'visibility': 'visible'
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(document).scrollTop() < window.innerHeight * 0.6) {
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(0).css({
+          color: "#000000",
+          visibility: "visible"
         });
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.nav-items').removeClass("active-white-item"); // $('.nav-items').eq(2).removeClass("active-white-item");
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".nav-items").removeClass("active-white-item"); // $('.nav-items').eq(2).removeClass("active-white-item");
 
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('.nav-items').eq(0).addClass("active-white-item");
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".nav-items").eq(0).addClass("active-white-item");
       }
 
       var position = window.pageYOffset;
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()('.section').each(function () {
-        var target = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top;
+      jquery__WEBPACK_IMPORTED_MODULE_3___default()(".section").each(function () {
+        var target = jquery__WEBPACK_IMPORTED_MODULE_3___default()(this).offset().top;
         let id = "";
-        id = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).attr('id');
-        var doc = document.documentElement;
-        var top = window.pageYOffset; // console.log("Top::",top);
-
-        console.log("ID:::", id);
-        var navLinks = jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a');
+        id = jquery__WEBPACK_IMPORTED_MODULE_3___default()(this).attr("id");
+        var navLinks = jquery__WEBPACK_IMPORTED_MODULE_3___default()("li a");
 
         if (position >= target - window.innerHeight * 0.5) {
-          if (top < 400) {
+          if (id === "home") {
             id = "home";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(0).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(0).css({
               color: "black",
               visibility: "visible"
             });
-          } else if (top > 404 && top < 1110) {
+          } else if (id === "about") {
             id = "about";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(1).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(1).css({
               color: "#FFCB05",
               visibility: "visible"
             });
-          } else if (top > 1112 && top < 1825) {
+          } else if (id === "services") {
             id = "services";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(2).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(2).css({
               color: "black",
               visibility: "visible"
             });
-          } else if (top > 1828 && top < 2604) {
+          } else if (id === "portfolio") {
             id = "portfolio";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(3).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(3).css({
               color: "black",
               visibility: "visible"
             });
-          } else if (top > 2606 && top < 3300) {
+          } else if (id === "technologies") {
             id = "technologies";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(4).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(4).css({
               color: "#0007700",
               visibility: "visible"
             });
-          } else if (top > 3302 && top < 3918) {
+          } else if (id === "products") {
             id = "products";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(5).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(5).css({
               color: "black",
               visibility: "visible"
             });
-          } else if (top > 3920 && top < 4860) {
+          } else if (id === "partners") {
             id = "partners";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(6).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(6).css({
               color: "black",
               visibility: "visible"
             });
-          } else if (top > 4861 && top < 5350) {
+          } else if (id === "bcd-life") {
             id = "bcd-life";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(7).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(7).css({
               color: "#000",
               visibility: "visible"
             });
-          } else if (top > 5351) {
+          } else if (id === "contact_us") {
             id = "contact_us";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-white-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").css("visibility", "hidden");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()(".spans").eq(8).css({
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(8).css({
               color: "#000",
               visibility: "visible"
             });
           } else {
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('li a[href="#' + id + '"]').addClass("active-black-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-black-item");
           }
         }
       });
     });
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()(window).scroll(lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(0).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#home");
+        return show;
+      }
 
-    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(0).css('visibility') === 'visible') {
-      window.history.replaceState(null, null, '#home');
-      return false;
-    }
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(1).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#about");
+        return show;
+      }
 
-    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(1).css('visibility') === 'visible') {
-      window.history.replaceState(null, null, '#about_us');
-      return false;
-    }
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(2).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#services");
+        return show;
+      }
 
-    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(2).css('visibility') === 'visible') {
-      window.history.pushState(null, null, '#services');
-      return false;
-    }
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(3).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#portfolio");
+        return show;
+      }
 
-    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(3).css('visibility') === 'visible') {
-      window.history.pushState(null, null, '#portfolio');
-      return false;
-    }
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(4).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#technologies");
+        return show;
+      }
 
-    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(4).css('visibility') === 'visible') {
-      window.history.pushState(null, null, '#technologies');
-      return false;
-    }
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(5).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#products");
+        return show;
+      }
 
-    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(5).css('visibility') === 'visible') {
-      window.history.pushState(null, null, '#partners');
-      return false;
-    } // if ($('.spans').eq(6).css('visibility') === 'visible') {
-    //   history.pushState(null, null, '#our_team');
-    //   return false;
-    // }
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(6).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#partners");
+        return show;
+      }
 
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(7).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#life_at_bcd");
+        return show;
+      }
 
-    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(6).css('visibility') === 'visible') {
-      window.history.pushState(null, null, '#life_at_bcd');
-      return false;
-    }
-
-    if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.spans').eq(7).css('visibility') === 'visible') {
-      window.history.pushState(null, null, '#contact_us');
-      return false;
-    } // ($('#yourElement').css('position') == 'absolute')
-
+      if (jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(8).css("visibility") === "visible") {
+        window.history.pushState(null, null, "#contact_us");
+        return show;
+      }
+    }, 500)); // ($('#yourElement').css('position') == 'absolute')
   }
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
     mounted();
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "nav-component"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "top-content container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("img", {
     className: "logo",
     src: _images_bcd_logo_png__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "nav-menu"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
     className: "bcd-btn hire invisible-hire-btn1",
     id: "hire",
     onClick: () => down()
-  }, "Hire Us"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  }, "Hire Us"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("img", {
     onClick: () => click(),
     className: "menu-svg",
     src: _images_menu_icon_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("ul", {
     className: "menu"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#home",
     onClick: () => moveToPage("#about")
-  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#about",
     onClick: () => moveToPage("#about")
-  }, "About us")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "About us")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#services",
     onClick: () => moveToPage("#services")
-  }, "Our Services")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Our Services")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#portfolio",
     onClick: () => moveToPage("#portfolio")
-  }, "Portfolio")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Portfolio")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#technologies",
     onClick: () => moveToPage("#technologies")
-  }, "Technologies")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Technologies")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#partners",
     onClick: () => moveToPage("#partners")
-  }, "Partners")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Partners")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#our_team",
     onClick: () => moveToPage("#our_team")
-  }, "Our Team")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Our Team")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#bcd-life",
     onClick: () => moveToPage("#bcd-life")
-  }, "Life At BCD")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Life At BCD")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     className: "menu-items",
     href: "#contact_us",
     onClick: () => moveToPage("#contact_us")
-  }, "Contact us"), "s"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_15__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, "Contact us"), "s"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_15__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
     className: "top-btn",
     onClick: () => Up()
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_16__.HiOutlineChevronDoubleUp, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Top")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_home_home__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    className: "section"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_about_about__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    className: "section"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_services_comp_services__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    className: "section"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    className: "section"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_technologies_technologies__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    className: "section"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_products_products__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    className: "section"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_partners_partners__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    className: "section"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_life_at_bcd_life_at_bcd__WEBPACK_IMPORTED_MODULE_13__["default"], {
-    className: "section"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_contact_contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
-    className: "section"
-  }));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_16__.HiOutlineChevronDoubleUp, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", null, "Top")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_home_home__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_about_about__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_services_comp_services__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_technologies_technologies__WEBPACK_IMPORTED_MODULE_10__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_products_products__WEBPACK_IMPORTED_MODULE_11__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_partners_partners__WEBPACK_IMPORTED_MODULE_12__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_life_at_bcd_life_at_bcd__WEBPACK_IMPORTED_MODULE_13__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_contact_contact__WEBPACK_IMPORTED_MODULE_14__["default"], null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
@@ -16760,6 +16762,490 @@ if ( typeof noGlobal === "undefined" ) {
 
 return jQuery;
 } );
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseTrim.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseTrim.js ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var trimmedEndIndex = __webpack_require__(/*! ./_trimmedEndIndex */ "./node_modules/lodash/_trimmedEndIndex.js");
+
+/** Used to match leading whitespace. */
+var reTrimStart = /^\s+/;
+
+/**
+ * The base implementation of `_.trim`.
+ *
+ * @private
+ * @param {string} string The string to trim.
+ * @returns {string} Returns the trimmed string.
+ */
+function baseTrim(string) {
+  return string
+    ? string.slice(0, trimmedEndIndex(string) + 1).replace(reTrimStart, '')
+    : string;
+}
+
+module.exports = baseTrim;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_trimmedEndIndex.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_trimmedEndIndex.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+/** Used to match a single whitespace character. */
+var reWhitespace = /\s/;
+
+/**
+ * Used by `_.trim` and `_.trimEnd` to get the index of the last non-whitespace
+ * character of `string`.
+ *
+ * @private
+ * @param {string} string The string to inspect.
+ * @returns {number} Returns the index of the last non-whitespace character.
+ */
+function trimmedEndIndex(string) {
+  var index = string.length;
+
+  while (index-- && reWhitespace.test(string.charAt(index))) {}
+  return index;
+}
+
+module.exports = trimmedEndIndex;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/debounce.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/debounce.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    now = __webpack_require__(/*! ./now */ "./node_modules/lodash/now.js"),
+    toNumber = __webpack_require__(/*! ./toNumber */ "./node_modules/lodash/toNumber.js");
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        timeWaiting = wait - timeSinceLastCall;
+
+    return maxing
+      ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke)
+      : timeWaiting;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        clearTimeout(timerId);
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+module.exports = debounce;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isSymbol.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isSymbol.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
+}
+
+module.exports = isSymbol;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/now.js":
+/*!************************************!*\
+  !*** ./node_modules/lodash/now.js ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+module.exports = now;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/throttle.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/throttle.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var debounce = __webpack_require__(/*! ./debounce */ "./node_modules/lodash/debounce.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js");
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/**
+ * Creates a throttled function that only invokes `func` at most once per
+ * every `wait` milliseconds. The throttled function comes with a `cancel`
+ * method to cancel delayed `func` invocations and a `flush` method to
+ * immediately invoke them. Provide `options` to indicate whether `func`
+ * should be invoked on the leading and/or trailing edge of the `wait`
+ * timeout. The `func` is invoked with the last arguments provided to the
+ * throttled function. Subsequent calls to the throttled function return the
+ * result of the last `func` invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the throttled function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.throttle` and `_.debounce`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to throttle.
+ * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=true]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new throttled function.
+ * @example
+ *
+ * // Avoid excessively updating the position while scrolling.
+ * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
+ *
+ * // Invoke `renewToken` when the click event is fired, but not more than once every 5 minutes.
+ * var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
+ * jQuery(element).on('click', throttled);
+ *
+ * // Cancel the trailing throttled invocation.
+ * jQuery(window).on('popstate', throttled.cancel);
+ */
+function throttle(func, wait, options) {
+  var leading = true,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  if (isObject(options)) {
+    leading = 'leading' in options ? !!options.leading : leading;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+  return debounce(func, wait, {
+    'leading': leading,
+    'maxWait': wait,
+    'trailing': trailing
+  });
+}
+
+module.exports = throttle;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/toNumber.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toNumber.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var baseTrim = __webpack_require__(/*! ./_baseTrim */ "./node_modules/lodash/_baseTrim.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = baseTrim(value);
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = toNumber;
 
 
 /***/ }),

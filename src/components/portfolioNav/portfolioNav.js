@@ -1,30 +1,46 @@
-import React,{useState} from "react";
-import '../navbar/navbar.scss';
+import React, { useEffect, useState } from "react";
+import "../../pages/scss/viewportfolio.scss";
 
+const PortfolioNav = ({ projects, select }) => {
+  const [selected, setSelected] = useState({});
+  function sel(val) {
+    select(val);
+    setSelected(val);
+  }
 
-
-const PortfolioNav = () => {
-    const [project, setProject] = useState([]);
-    const [selectedProject, setSelectedProject] = useState('')
-  
-    return (
-        <nav className="bcd-nav" id="portfolio-nav">
-    <ul>
-       <li>
-        <a className="nav-items" href="#">
+  useEffect(() => {
+    setSelected(projects[0]);
+  }, []);
+  return (
+    <nav className="bcd-nav" id="portfolio-nav">
+      <ul>
+        <li>
+          {/* <a className="nav-items" href="#">
           <div><span className="item">About us</span></div>
           <div className="nav-circle"></div>
-          </a>
-          </li>
+          </a> */}
+        </li>
 
-     {project.map((project,index) => <li key={index} className="inner-navbar">
-        <a id="gander" className="nav-items"  className={ selectedProject === project && ' active-black-item'} onClick="select(project)">
-          <div><span >{project?.name}</span></div>
-          <div className="nav-circle"></div>
-        </a>
-      </li>)}
-       <li>
-        <a id="expanse Luna Wallet" className="nav-items" href="#">
+        {projects.map((project, index) => (
+          <li key={index} className="inner-navbar">
+            <a
+              id="gander"
+              className={
+                project.name === selected.name
+                  ? "active-black-item nav-items"
+                  : "nav-items"
+              }
+              onClick={() => sel(project)}
+            >
+              <div>
+                <span>{project?.name}</span>
+              </div>
+              <div className="nav-circle"></div>
+            </a>
+          </li>
+        ))}
+        {/* <li> */}
+        {/* <a id="expanse Luna Wallet" className="nav-items" href="#">
            <div><span className="item">Our Services</span></div>
             <div className="nav-circle"></div>
          </a>
@@ -58,8 +74,10 @@ const PortfolioNav = () => {
           <div><span className="item">Contact us</span></div>
           <div className="nav-circle"></div>
         </a>
-      </li>
-    </ul>
-  </nav>
-    )
-}
+      </li> */}
+      </ul>
+    </nav>
+  );
+};
+
+export default PortfolioNav;

@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react';
+import React from 'react';
 import "./slide.css";
 import { HiChevronLeft } from "react-icons/hi";
 import { HiChevronRight } from "react-icons/hi";
@@ -6,7 +6,7 @@ import { HiChevronRight } from "react-icons/hi";
 
 
 
-const Slideshow = ({closeSlider, src, next, prev,img, index}) => {
+const Slideshow = ({closeSlider, src, next, prev,img}) => {
     
     const slideImages = [
         'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife1.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife2.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife3.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife4.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife5.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife6.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife7.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife8.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife9.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife10.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife11.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife12.png'
@@ -15,7 +15,7 @@ const Slideshow = ({closeSlider, src, next, prev,img, index}) => {
     return (
     
       <div className="slide-container">
-          <button className='btn-close' onClick={() => closeSlider()}>x</button>
+          <button className='btn-close' style={{color:"white"}} onClick={() => closeSlider()}>x</button>
           <button className='btn-prev' onClick={() => prev()}><HiChevronLeft/></button>
           <div className='zoomed-img'>
          

@@ -1,3 +1,5 @@
+
+
 .new-class-bar {
     .btn-folo {
       margin-top: -17px;
@@ -89,6 +91,8 @@
   
       .second-column {
         background-color: #282827;
+        height: 100%;
+        padding-top: 113px;
   
         .btn-column {
           display: grid;
@@ -123,7 +127,7 @@
           border: 5px solid white;
           max-width: 399px;
           position: relative;
-          margin: 0 auto;
+          margin: auto auto;
           padding: 0 0 35px 0;
           transform: scale(1.5);
           height: 400px;
@@ -180,6 +184,7 @@
                 color: black;
                 font-size: 10px;
                 text-align: center;
+                text-decoration: none;
               }
             }
           }
@@ -199,6 +204,12 @@
   .images-container2 {
     display: flex;
     flex-direction: row;
+  }
+
+  .nav-component {
+    .top-content {
+      padding: 40px 15px;
+    }
   }
   
   @media screen and (max-width:1699px) {
@@ -224,6 +235,12 @@
       }
     }
   }
+
+  .nav-component {
+    .top-content {
+      padding: 40px 15px;
+    }
+  }
   @media screen and (max-width:1589px) {
     .portfolio-container {
       .folio-col {
@@ -236,6 +253,12 @@
           }
         }
       }
+    }
+  }
+
+  .nav-component {
+    .top-content {
+      padding: 40px 15px;;
     }
   }
   @media screen and (max-width:1443px) {
@@ -262,6 +285,12 @@
       }
     }
   }
+
+  .nav-component {
+    .top-content {
+      padding: 40px 15px;;
+    }
+  }
   @media screen and (max-width:1380px) {
     .portfolio-container {
       .folio-col {
@@ -274,6 +303,12 @@
           }
         }
       }
+    }
+  }
+
+  .nav-component {
+    .top-content {
+      padding: 40px 15px;
     }
   }
   @media screen and (max-width:1025px) {

@@ -10,13 +10,10 @@ import itConsStrategy from "../../images/it consultation strategy.svg";
 import erpSolutions from "../../images/erp software solutions.svg";
 
 const Services = () => {
-  const msg = "Welcome to your Gatsby-app";
-  const props = ["about"];
-
   return (
-    <section id="services" className="flex-display services yellow-bg">
+    <section id="services" className="flex-display services yellow-bg section">
       <div>
-        <div className=" container">
+        <div style={{width:"98%",margin:"0 auto"}}>
           <div className="make-center">
             <h1 className="main-heading white-circle">Our Services</h1>
             <p className="content-para">
@@ -32,8 +29,6 @@ const Services = () => {
                   </div>
                   <h3>Blockchain Development</h3>
                   <p className="gray-txt">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
                   </p>
                 </div>
               </div>
@@ -46,8 +41,6 @@ const Services = () => {
                   </div>
                   <h3>Exchange Development</h3>
                   <p className="gray-txt">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
                   </p>
                 </div>
               </div>
@@ -60,8 +53,6 @@ const Services = () => {
                   </div>
                   <h3>Software Development</h3>
                   <p className="gray-txt">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
                   </p>
                 </div>
               </div>
@@ -74,8 +65,6 @@ const Services = () => {
                   </div>
                   <h3>Website Development</h3>
                   <p className="gray-txt">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
                   </p>
                 </div>
               </div>
@@ -88,8 +77,6 @@ const Services = () => {
                   </div>
                   <h3>Mobile Application Development</h3>
                   <p className="gray-txt">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
                   </p>
                 </div>
               </div>
@@ -102,8 +89,6 @@ const Services = () => {
                   </div>
                   <h3>UI-UX-Designing</h3>
                   <p className="gray-txt">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
                   </p>
                 </div>
               </div>
@@ -116,8 +101,6 @@ const Services = () => {
                   </div>
                   <h3>IT Consultation Strategy</h3>
                   <p className="gray-txt">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
                   </p>
                 </div>
               </div>
@@ -130,8 +113,6 @@ const Services = () => {
                   </div>
                   <h3>ERP Software Solutions</h3>
                   <p className="gray-txt">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry.
                   </p>
                 </div>
               </div>

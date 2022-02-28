@@ -7,10 +7,8 @@ import reactiveSpacepic from "../../images/reactive-space2.png";
 import rnsLogopic from "../../images/RNS_logo.png";
 
 const Partners = () => {
-  const msg = "Welcome to Your Gatsby-app";
-
   return (
-    <section id="partners" className="partners flex-display  white-bg">
+    <section id="partners" className="partners flex-display  white-bg section">
       <div className="container partners-container tec-container">
         <div className="partners-header">
           <div className="technology">
@@ -30,28 +28,45 @@ const Partners = () => {
             <img src={expanseLogopic} />
             <p className="content-para">
               <span className="line-txt">Expanse</span>
-              <a href="https://expanse.tech/">Website >></a>
+              <a
+                style={{ textDecoration: "none" }}
+                href="https://expanse.tech/"
+              >
+                {"Website >>"}
+              </a>
             </p>
           </div>
           <div className="expanse">
             <img src={fusionLogopic} />
             <p className="content-para">
               <span className="line-txt">IdeoFusion</span>
-              <a href="https://www.ideofuzion.com/">Website >></a>
+              <a
+                style={{ textDecoration: "none" }}
+                href="https://www.ideofuzion.com/"
+              >
+                {"Website >>"}
+              </a>
             </p>
           </div>
           <div className="expanse">
             <img style={{ width: "52px" }} src={reactiveSpacepic} />
             <p className="content-para">
               <span className="line-txt">Reactive Space</span>
-              <a href="https://reactivespace.com/">Website >></a>
+              <a
+                style={{ textDecoration: "none" }}
+                href="https://reactivespace.com/"
+              >
+                {"Website >>"}
+              </a>
             </p>
           </div>
           <div className="expanse">
             <img src={rnsLogopic} />
             <p className="content-para">
               <span className="line-txt">RNS Solution</span>
-              <a href="https://rnssol.com/">Website >></a>
+              <a style={{ textDecoration: "none" }} href="https://rnssol.com/">
+                {"Website >>"}
+              </a>
             </p>
           </div>
         </div>

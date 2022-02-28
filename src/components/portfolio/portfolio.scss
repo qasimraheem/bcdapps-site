@@ -83,6 +83,7 @@
           position: absolute;
           left: -20px;
           top: -160px;
+          margin-left: -32px;
           li {
             display: block;
             margin-bottom: 5px;
@@ -102,7 +103,7 @@
       }
       .bcd-btn {
         margin: 60px 0 0 0;
-        padding: 15px 25px;
+        padding: 14px 25px;
         color: #ffffff;
         background-color: #000000;
         font-size: 0.9em;
@@ -127,7 +128,7 @@
   &:hover {
     cursor: pointer;
     background-color: #000 !important;
-    i {
+    .color {
       color: #fff !important;
     }
   }

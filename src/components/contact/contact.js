@@ -7,9 +7,9 @@ import tildIcon from "../../images/tild-arrow.svg";
 import footerIcon from "../../images/footer-logo.png";
 import $ from "jquery";
 import axios from "axios";
+import { navigate } from "gatsby";
 
 const Contact = () => {
-  const [emailLoader, setEmailLoader] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
@@ -23,9 +23,7 @@ const Contact = () => {
   };
 
   function currentOpening() {
-    this.$router.push({
-      path: "careers",
-    });
+    navigate("careers");
   }
 
   function showLoader() {
@@ -56,7 +54,10 @@ const Contact = () => {
   useEffect(() => {}, []);
 
   return (
-    <section id="contact_us" className="flex-display contact_us white-bg">
+    <section
+      id="contact_us"
+      className="flex-display contact_us white-bg section"
+    >
       <section id="form">
         <div>
           <form className="contact-form display">
@@ -125,7 +126,10 @@ const Contact = () => {
               </div>
             </div>
             <div className="btn-direction">
-              <a className="bcd-btn2 bcd-btn margin" onClick={() => currentOpening()}>
+              <a
+                className="bcd-btn2 bcd-btn margin"
+                onClick={() => currentOpening()}
+              >
                 Life at BCD
               </a>
               <a className="bcd-btn" onClick={() => currentOpening()}>

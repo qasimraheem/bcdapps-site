@@ -109,18 +109,18 @@ const LifeAtBcd = () => {
       setIndex(index - 1);
       return setImg(Slider[index - 1]);
     } else {
-      setImg("");
-      setShowSlider('none')
+      setIndex(Slider.length - 1);
+      setImg(Slider[index]);
     }
   }
   function next() {
-    if (index > 0 && index < Slider.length - 1) {
-        setIndex(index + 1);
-        setImg(Slider[index + 1]);
-      
+    if (index < Slider.length - 1) {
+      setIndex(index + 1);
+      setImg(Slider[index + 1]);
     } else {
-      setImg("")
-      setShowSlider("none");
+      setIndex(0);
+      setImg(Slider[index]);
+      // setShowSlider("none");
     }
   }
 
@@ -132,7 +132,7 @@ const LifeAtBcd = () => {
   return (
     <section
       id="bcd-life"
-      className="flex-display bcd-life yellow-bg section postion"
+      className="flex-display bcd-life yellow-bg section postion section"
     >
       <div className="bcd-life-left-container">
         <h1 className="white-circle main-heading">Life at Bcd</h1>
