@@ -10,7 +10,7 @@
     .home-content {
       z-index: 1;
       text-align: right;
-      margin: 72px -10px 0 0px;
+      margin: 70px -10px 0 0px;
       .bcd-btn {
         margin: 20px 0 0 0;
         padding: 15px 25px;
@@ -77,6 +77,9 @@
 }
 
 @media screen and (max-width:540px) {
+   .home {
+     overflow-x: hidden;
+   }
   .home-content{
     h1.pad-all{
       padding:42px 25px 2px 0;
@@ -84,3 +87,18 @@
   }
 }
 
+
+@media screen and (max-width:490px) {
+  
+.home {
+  .home-container {
+    .home-content {
+      .bcd-btn {
+        margin: 20px 5px 0 0;
+        padding: 15px 25px;
+        color: black;
+      }
+    }
+}
+}
+}

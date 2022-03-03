@@ -26,8 +26,10 @@ const About = () => {
       <div className="container custom-grid">
         <div className="about-section">
           <div className="about-left white-txt">
+            <div className="size-it">
             <h1 className="circle pad-all1 main-heading">About Us</h1>
-            <p className="about-us-para">
+            </div>
+            <p className="about-us-para" style={{lineHeight:"17px"}}>
               Professional developers, designers and marketers working together
               to provide finest blockchain solutions and marketing services at
               economical prices.

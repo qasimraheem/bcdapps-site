@@ -2286,76 +2286,78 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _scss_careers_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/careers.scss */ "./src/pages/scss/careers.scss");
 /* harmony import */ var _scss_careers_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_careers_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
 /* harmony import */ var _images_white_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/white-logo.png */ "./src/images/white-logo.png");
 /* harmony import */ var _images_cv_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/cv.svg */ "./src/images/cv.svg");
-/* harmony import */ var _images_cross_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../images/cross.png */ "./src/images/cross.png");
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
 
 
 
 
+ // import crossIcon from "../images/cross.png";
 
-
-
+ // import JobApplication from "../components/job-application/jobApplication";
 
 const Careers = () => {
   const {
     0: selectedOption,
     1: setSelectedOption
-  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
   const options = [{
-    label: 'Graphic Designer',
-    value: 'Graphic Designer'
+    label: "Graphic Designer",
+    value: "Graphic Designer"
   }, {
-    label: 'UI/UX Engineer',
-    value: 'UI/UX Engineer'
+    label: "UI/UX Engineer",
+    value: "UI/UX Engineer"
   }, {
-    label: ' JavaScript Engineer',
-    value: ' JavaScript Engineer'
+    label: " JavaScript Engineer",
+    value: " JavaScript Engineer"
   }, {
-    label: 'Software Engineer',
-    value: 'Software Engineer'
+    label: "Software Engineer",
+    value: "Software Engineer"
   }, {
-    label: 'Front-End Developer',
-    value: 'Front-End Developer'
+    label: "Front-End Developer",
+    value: "Front-End Developer"
   }, {
-    label: 'Back-End Developer',
-    value: 'Back-End Developer'
+    label: "Back-End Developer",
+    value: "Back-End Developer"
   }, {
-    label: ' Full Stack Developer',
-    value: ' Full Stack Developer'
+    label: " Full Stack Developer",
+    value: " Full Stack Developer"
   }, {
-    label: ' Android Developer',
-    value: ' Android Developer'
+    label: " Android Developer",
+    value: " Android Developer"
   }, {
-    label: 'Content Writer',
-    value: 'Content Writer'
+    label: "Content Writer",
+    value: "Content Writer"
   }, {
-    label: 'Business Development Manager',
-    value: 'Business Development Manager'
+    label: "Business Development Manager",
+    value: "Business Development Manager"
   }, {
-    label: ' System Analyst',
-    value: ' System Analyst'
+    label: " System Analyst",
+    value: " System Analyst"
   }];
 
   function moveToHome() {
-    (0,gatsby__WEBPACK_IMPORTED_MODULE_5__.navigate)("/");
+    (0,gatsby__WEBPACK_IMPORTED_MODULE_4__.navigate)("/");
   }
 
   function openJobModal() {
     // this.openModal = true;
-    this.$modal.show('job-application'); // this.jobModal= true;
+    this.$modal.show("job-application"); // this.jobModal= true;
   }
 
   function handleChange(val) {
     setSelectedOption(val);
   }
 
-  console.log("selectedOption:::", selectedOption);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     className: "careers black-bg flex-display",
-    id: "careers"
+    id: "careers",
+    style: {
+      marginTop: "40px",
+      paddingTop: "30px"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav-component"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -2380,9 +2382,9 @@ const Careers = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     className: "main-heading1",
     style: {
-      paddingBottom: '26px'
+      paddingBottom: "26px"
     }
-  }, "Post Your CV For Future Openings."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "Post Your CV For Future Openings."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_select__WEBPACK_IMPORTED_MODULE_5__["default"], {
     options: options,
     className: "custom-select"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -34620,21 +34622,6 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
-
-/***/ }),
-
-/***/ "./src/images/cross.png":
-/*!******************************!*\
-  !*** ./src/images/cross.png ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzggNzkuMTU5ODI0LCAyMDE2LzA5LzE0LTAxOjA5OjAxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+IEmuOgAAASxJREFUOI21lLEuREEUhr8bCbFbrVARNuFpeAFbCLVWobUvsJdGspZGgRfwBiJb7RtIaFQ8gL3Fr5mRc8eZK2RN8hdzzvz/nPln5hTCHRvALrANbAHLwBvwBNwDd8DLN5bqWBQMBFOBGjAVlIKW5VuhFcHkB5EUk8Cric0Lxr8UihgLFqxY+UehiDKKrQuqJLknaAtGSfwiHOs4iVeCLoITZ6d2qLgQDEPsPMwRrDqcPoIHJ3FpiIWgZ+ZzgluH84jgNePD0AhghK4z698RfDQY20vE9psuoqky61GE9dCtzPNslHh0kHh4lfOs7ySWHI+sh53cbXrv7EiwJrhxKu4IDpP41zubxQ841X/9zZl2jYiW4MzxMEUV1tX6WSG/03ZDp90BNjOd9jklfQL9DSkxstSWVAAAAABJRU5ErkJggg==");
 
 /***/ }),
 

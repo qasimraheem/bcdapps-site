@@ -9,7 +9,7 @@
   .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2px;
+    grid-gap: 1.4px;
     background: #000000;
     text-align: center;
     margin: 30px 0 0 0;
@@ -152,7 +152,7 @@
           display: grid;
           justify-content: center;
           align-items: center;
-          margin: 30px auto 10px;
+          margin: 60px auto 10px;
           height: 81px;
         }
 
@@ -170,7 +170,7 @@
 // }
 @media screen and (max-width:640px) {
   .services {
-
+      overflow-x: hidden;
     .services-grid {
       display: block;
       background: inherit;
@@ -212,5 +212,27 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width:610px){
+  .white-circle {
+    background: url('../../images/circle2.svg') no-repeat top right;
+    margin: 0 auto;
+    padding: 20px 15px 10px 0;
+    text-align: right;
+    display: inline-block;
+    background-position: 190px 60px;
+  }
+}
+
+@media screen and (max-width:530px) {
+  .white-circle {
+    background: url('../../images/circle2.svg') no-repeat top right;
+    margin: 0 auto;
+    padding: 20px 15px 10px 0;
+    text-align: right;
+    display: inline-block;
+    background-position: 124px 450px;
   }
 }

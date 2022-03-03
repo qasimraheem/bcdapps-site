@@ -136,7 +136,7 @@ const LifeAtBcd = () => {
     >
       <div className="bcd-life-left-container">
         <h1 className="white-circle main-heading">Life at Bcd</h1>
-        <p>
+        <p style={{lineHeight:"19px"}}>
           Professional developers, designers and marketers working together to
           provide finest blockchain solutions and marketing services at
           economical prices.

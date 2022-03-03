@@ -3884,7 +3884,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const About = () => {
-  const msg = "Welcome to your Gatsby-app";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "about",
     className: "about black-bg flex-display about-section section"
@@ -3894,16 +3893,15 @@ const About = () => {
     className: "about-section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "about-left white-txt"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "size-it"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
     className: "circle pad-all1 main-heading"
-  }, "About Us"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    className: "content-para"
-  }, "Professional developers, designers and marketers working", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    className: "content-para"
-  }, "together to provide finest blockchain solutions and marketing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    className: "content-para"
-  }, "services at economical prices."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    className: "about-us-para"
+  }, "About Us")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "about-us-para",
+    style: {
+      lineHeight: "17px"
+    }
   }, "Professional developers, designers and marketers working together to provide finest blockchain solutions and marketing services at economical prices.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "about-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -3964,7 +3962,11 @@ const About = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _images_requirement_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
     alt: "requirement"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Requirement"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Engineering")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: {
+      marginBottom: "0rem"
+    }
+  }, "Requirement"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Engineering")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _images_circles_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
     alt: "circle"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
@@ -4092,7 +4094,11 @@ const About = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _images_config_managemet_svg__WEBPACK_IMPORTED_MODULE_16__["default"],
     alt: "config managemet"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Configuration"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Management")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: {
+      marginBottom: "0rem"
+    }
+  }, "Configuration"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Management")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _images_circles_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
     alt: "circle"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
@@ -4144,10 +4150,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const Contact = () => {
   const {
-    0: emailLoader,
-    1: setEmailLoader
-  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const {
     0: name,
     1: setName
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
@@ -4160,18 +4162,58 @@ const Contact = () => {
     1: setPhoneNumber
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
   const {
+    0: numberError,
+    1: setNumberError
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  const {
+    0: emialError,
+    1: setEmailError
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  const {
+    0: nameError,
+    1: setNameError
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  const {
     0: message,
     1: setMessage
-  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
-  const emailData = {
-    name: name,
-    email: email,
-    phoneNumber: phoneNumber,
-    message: message
-  };
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+
+  function ValidateEmail() {
+    if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
+      return console.log("email is invalid");
+    } else {
+      return setEmailError("Email is not valid");
+    }
+  }
+
+  function ValidateUsername() {
+    if (name !== '') {
+      return console.log("Username is valid");
+    } else {
+      return setNameError("Enter your name");
+    }
+  }
+
+  function ValidatephoneNumber() {
+    if (/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(phoneNumber)) {
+      return console.log("Number is valid");
+    } else {
+      return setNumberError("Number is not invalid");
+    }
+  }
+
+  function validator() {
+    ValidateEmail();
+    ValidateUsername();
+    ValidatephoneNumber();
+  }
 
   function currentOpening() {
     (0,gatsby__WEBPACK_IMPORTED_MODULE_9__.navigate)("careers");
+  }
+
+  function bcdlife() {
+    (0,gatsby__WEBPACK_IMPORTED_MODULE_9__.navigate)("#bcd-life");
   }
 
   function showLoader() {
@@ -4186,14 +4228,37 @@ const Contact = () => {
     }, "slow");
   }
 
-  function sendForm() {
-    showLoader();
-    axios__WEBPACK_IMPORTED_MODULE_8___default().post("http://172.25.33.105:8081/sendMail", emailData).then(res => {
-      hideLoader();
-    });
+  const emailData = {
+    message,
+    email,
+    phoneNumber,
+    message
+  };
+
+  async function sendForm() {
+    validator();
+
+    if (nameError !== "" || emialError !== "" || numberError !== "") {
+      return console.log("not valid Credentials");
+    } else {
+      showLoader();
+
+      try {
+        await axios__WEBPACK_IMPORTED_MODULE_8___default().post("http://172.25.33.105:8081/sendMail", emailData);
+        hideLoader();
+        ValidateEmail(name);
+        ValidateUsername(email);
+        ValidatephoneNumber(phoneNumber);
+      } catch (e) {
+        console.log("Error::", e);
+      }
+    }
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {}, []);
+  console.log("nameError:", nameError);
+  console.log("emailError:", emialError);
+  console.log("numberError:", numberError);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "contact_us",
     className: "flex-display contact_us white-bg section"
@@ -4235,14 +4300,22 @@ const Contact = () => {
     className: "send-btn",
     onClick: "one"
   }, "Send")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "container cont-container"
+    className: "cont-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "technology"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    style: {
+      fontWeight: "600",
+      marginBottom: "0px"
+    },
     className: "heading"
   }, "Contact Us"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "address"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: {
+      lineHeight: "17px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _images_location_svg__WEBPACK_IMPORTED_MODULE_2__["default"]
   }), "Plaza #75 2nd Floor, Taseen Complex, Bahria Town Civic Center, Islamabad Pakistan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _images_atrate_svg__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -4252,8 +4325,11 @@ const Contact = () => {
     className: "btn-direction"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     className: "bcd-btn2 bcd-btn margin",
-    onClick: () => currentOpening()
+    onClick: () => bcdlife()
   }, "Life at BCD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    style: {
+      marginLeft: "3px"
+    },
     className: "bcd-btn",
     onClick: () => currentOpening()
   }, "Current Opening"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4281,7 +4357,7 @@ const Contact = () => {
     fill: "",
     d: "M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826    C49.652,11.137,38.516,0,24.826,0z M31,25.7h-4.039c0,6.453,0,14.396,0,14.396h-5.985c0,0,0-7.866,0-14.396h-2.845v-5.088h2.845    v-3.291c0-2.357,1.12-6.04,6.04-6.04l4.435,0.017v4.939c0,0-2.695,0-3.219,0c-0.524,0-1.269,0.262-1.269,1.386v2.99h4.56L31,25.7z"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "/"
+    href: "/#home"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     version: "1.1",
@@ -4294,7 +4370,7 @@ const Contact = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
     d: "M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826    C49.652,11.137,38.516,0,24.826,0z M35.901,19.144c0.011,0.246,0.017,0.494,0.017,0.742c0,7.551-5.746,16.255-16.259,16.255    c-3.227,0-6.231-0.943-8.759-2.565c0.447,0.053,0.902,0.08,1.363,0.08c2.678,0,5.141-0.914,7.097-2.446    c-2.5-0.046-4.611-1.698-5.338-3.969c0.348,0.066,0.707,0.103,1.074,0.103c0.521,0,1.027-0.068,1.506-0.199    c-2.614-0.524-4.583-2.833-4.583-5.603c0-0.024,0-0.049,0.001-0.072c0.77,0.427,1.651,0.685,2.587,0.714    c-1.532-1.023-2.541-2.773-2.541-4.755c0-1.048,0.281-2.03,0.773-2.874c2.817,3.458,7.029,5.732,11.777,5.972    c-0.098-0.419-0.147-0.854-0.147-1.303c0-3.155,2.558-5.714,5.713-5.714c1.644,0,3.127,0.694,4.171,1.804    c1.303-0.256,2.523-0.73,3.63-1.387c-0.43,1.335-1.333,2.454-2.516,3.162c1.157-0.138,2.261-0.444,3.282-0.899    C37.987,17.334,37.018,18.341,35.901,19.144z"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "/"
+    href: "/#home"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: "30",
@@ -4315,27 +4391,27 @@ const Contact = () => {
     placeholder: "Name",
     value: name,
     onChange: e => setName(e.target.value)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "help "
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }), nameError ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "help is-danger custom-err"
+  }, nameError) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     className: "inputs gray-txt",
     type: "email",
     name: "email",
     placeholder: "Email",
     value: email,
     onChange: e => setEmail(e.target.value)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "help"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }), emialError ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "help is-danger custom-err"
+  }, emialError) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     className: "inputs gray-txt",
     type: "number",
     name: "number",
     placeholder: "Phone#",
     value: phoneNumber,
     onChange: e => setPhoneNumber(e.target.value)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "help"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
+  }), numberError ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "help is-danger custom-err"
+  }, numberError) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
     class: "inputs gray-txt",
     placeholder: "Message",
     name: "message",
@@ -4345,7 +4421,7 @@ const Contact = () => {
     className: "help"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     class: "send-btn",
-    onClick: () => sendForm
+    onClick: () => sendForm()
   }, "Send"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "copy-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
@@ -4391,21 +4467,20 @@ const Home = () => {
   const msg = "Welcome to your Gatsby-app";
 
   function portfolio() {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('html, body').animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()('#portfolio').offset().top
-    }, 'slow');
-  }
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()("html, body").animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()("#portfolio").offset().top
+    }, "slow");
+  } // function moveToPage(id) {
+  //   $('html, body').animate({
+  //     scrollTop: $(id).offset().top
+  //   }, 'slow');
+  // }
 
-  function moveToPage(id) {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('html, body').animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()(id).offset().top
-    }, 'slow');
-  }
 
   function down() {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('html, body').animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()('#contact_us').offset().top
-    }, 'slow');
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()("html, body").animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()("#contact_us").offset().top
+    }, "slow");
   } // viewHandler(){
   //     $('.spans').css({"color": "#000000","visibility":"hidden"});
   //     $('.spans').eq(2).css({"color": "white","visibility":"visible"});
@@ -4422,21 +4497,40 @@ const Home = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "home-content black-txt"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "circle pad-all main-heading"
+    className: "circle pad-all main-heading",
+    style: {
+      marginBottom: "7px",
+      paddingBottom: "7px"
+    }
   }, "Codifying"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "main-heading"
+    className: "main-heading",
+    style: {
+      marginBottom: "-2.2px",
+      marginTop: "-2.5px"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "yellow-txt"
   }, "into"), " Reality"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      marginBottom: "-15px"
+    },
     className: "mt20 content-para"
-  }, "Providing you the best blockchain solutions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Providing you the best blockchain solutions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: {
+      marginTop: '-21px'
+    }
+  }, "that fit your needs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "content-para"
-  }, "that fit your needs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hire-us-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     className: "bcd-btn",
     style: {
-      textDecoration: "none"
+      textDecoration: "none",
+      marginTop: "0px",
+      padding: "12.5px 25px"
     },
     onClick: () => portfolio()
   }, "View Portfolio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
@@ -4486,14 +4580,16 @@ const Slideshow = ({
   src,
   next,
   prev,
-  img,
-  index
+  img
 }) => {
   const slideImages = ['https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife1.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife2.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife3.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife4.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife5.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife6.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife7.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife8.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife9.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife10.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife11.png', 'https://s3.ap-south-1.amazonaws.com/blockchaindapps/bcdlife12.png'];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "slide-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    className: "btn-close",
+    className: "closer",
+    style: {
+      color: "white"
+    },
     onClick: () => closeSlider()
   }, "x"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "btn-prev",
@@ -4666,7 +4762,11 @@ const LifeAtBcd = () => {
     className: "bcd-life-left-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
     className: "white-circle main-heading"
-  }, "Life at Bcd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Professional developers, designers and marketers working together to provide finest blockchain solutions and marketing services at economical prices.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "Life at Bcd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: {
+      lineHeight: "19px"
+    }
+  }, "Professional developers, designers and marketers working together to provide finest blockchain solutions and marketing services at economical prices.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "bcd-life-right-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     className: "bcdlife-img1-container-a full-size-container"
@@ -4767,6 +4867,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navbar_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_navbar_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+
 
 
 
@@ -4780,37 +4882,37 @@ const Navbar = () => {
     index: 0,
     name: "Home",
     link: "#home",
-    color: ''
+    class: "active-white-item nav-items"
   }, {
     index: 1,
     name: "About us",
     link: "#about",
-    color: 'black'
+    class: "active-black-item nav-items"
   }, {
     inex: 2,
     name: "Our Services",
     link: "#services",
-    color: ''
+    class: "active-white-item nav-items"
   }, {
     index: 3,
     name: "Portfolio",
     link: "#portfolio",
-    color: ''
+    class: "active-white-item nav-items"
   }, {
     index: 4,
     name: "Technologies",
     link: "#technologies",
-    color: 'black'
+    class: "active-black-item nav-items"
   }, {
     index: 5,
     name: "Our Products",
     link: "#products",
-    color: ''
+    class: "active-white-item nav-items"
   }, {
     index: 6,
     name: "Partners",
     link: "#partners",
-    color: ''
+    class: "active-white-item nav-items"
   }, // {
   //   name: 'Our Team',
   //   link: "#our_team",
@@ -4818,21 +4920,18 @@ const Navbar = () => {
   // },
   {
     index: 7,
-    name: 'Life At BCD',
+    name: "Life At BCD",
     link: "#bcd-life",
-    color: ''
+    class: "active-white-item nav-items"
   }, {
     index: 8,
     name: "Contact us",
     link: "#contact_us",
-    color: ''
+    class: "active-white-item nav-items"
   }];
 
   function selectNav(val) {
-    setSelectedNav(val);
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('html, body').animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()(val.link).offset().top
-    }, 'slow');
+    return (0,gatsby__WEBPACK_IMPORTED_MODULE_3__.navigate)(val.link);
   } // function moveToPage(id) {
   //   setSelectedNav(id)
   //   $('html, body').animate({
@@ -4846,20 +4945,30 @@ const Navbar = () => {
     // console.log('dsfsdfsd', this.idType);
     //  console.log('asdasd',this.selectedID)
     var currentLocation = document.URL;
-    var fields = currentLocation.split('#');
+    var fields = currentLocation.split("#");
 
     if (fields[1]) {
-      var urlName = '#' + fields[1];
+      var urlName = "#" + fields[1];
       var filter = links.filter(val => val.link === urlName)[0];
       setSelectedNav(filter);
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()('html, body').animate({
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()("html, body").animate({
         scrollTop: jquery__WEBPACK_IMPORTED_MODULE_2___default()(urlName).offset().top
-      }, 'slow');
+      }, "slow");
     } else {
       setSelectedNav(links[0]);
     }
   }
 
+  function style(item) {
+    if (item.index) {
+      return "active-black-item nav-items";
+    } else {
+      return "nav-items";
+    }
+  }
+
+  const history = window.location.href;
+  console.log("location:::", history);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const unmount = mounted();
     return unmount;
@@ -4867,17 +4976,19 @@ const Navbar = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     className: "bcd-nav bcd-nav2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
-    className: "nav_ul"
+    style: {
+      marginTop: "6px"
+    }
   }, links.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    onClick: () => selectNav(item),
     key: item.index
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    className: (selectedNav === null || selectedNav === void 0 ? void 0 : selectedNav.index) === item.index && 'active-white-item nav-items' || item.index === selectedNav.index && item.color === 'black' ? 'active-black-item nav-items' : "nav-items",
+    className: "nav-items",
     href: item.link
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "spans"
   }, item.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "nav-circle"
+    className: "nav-circle",
+    onClick: () => selectNav(item)
   }))))));
 };
 
@@ -4914,7 +5025,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Partners = () => {
-  const msg = "Welcome to Your Gatsby-app";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "partners",
     className: "partners flex-display  white-bg section"
@@ -4945,6 +5055,7 @@ const Partners = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "line-txt"
   }, "Expanse"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    target: "_blank",
     style: {
       textDecoration: "none"
     },
@@ -4958,6 +5069,7 @@ const Partners = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "line-txt"
   }, "IdeoFusion"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    target: "_blank",
     style: {
       textDecoration: "none"
     },
@@ -4974,6 +5086,7 @@ const Partners = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "line-txt"
   }, "Reactive Space"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    target: "_blank",
     style: {
       textDecoration: "none"
     },
@@ -4987,6 +5100,7 @@ const Partners = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "line-txt"
   }, "RNS Solution"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    target: "_blank",
     style: {
       textDecoration: "none"
     },
@@ -5028,31 +5142,31 @@ const Portfolio = () => {
     0: selectedPortfolio,
     1: setSelectedPortfolio
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
-  const msg = 'Welcome to Your Vue.js App';
+  const msg = "Welcome to Your Vue.js App";
   const full = [{
     id: 0,
-    sheet: 'Tokenlab-img.jpg',
-    sheettxt: 'Tokenlab'
+    sheet: "Tokenlab-img.jpg",
+    sheettxt: "Tokenlab"
   }, {
     id: 1,
-    sheet: 'LunaWallet-img.jpg',
-    sheettxt: 'Luna Wallet'
+    sheet: "LunaWallet-img.jpg",
+    sheettxt: "Luna Wallet"
   }, {
     id: 2,
-    sheet: 'Cliiimb-img.jpg',
-    sheettxt: 'Cliiimb'
+    sheet: "Cliiimb-img.jpg",
+    sheettxt: "Cliiimb"
   }, {
     id: 3,
-    sheet: 'DWS-img.jpg',
-    sheettxt: 'DWS'
+    sheet: "DWS-img.jpg",
+    sheettxt: "DWS"
   }, {
     id: 4,
-    sheet: 'Gander-img.jpg',
-    sheettxt: 'Gander'
+    sheet: "Gander-img.jpg",
+    sheettxt: "Gander"
   }]; // selectedPortfolio,
   // isZeroIndex,
   // isIndexOutOfRange
-  // }  
+  // }
 
   console.log("fullFirst :", full[0]);
 
@@ -5083,7 +5197,7 @@ const Portfolio = () => {
   }
 
   function goToPorfolio() {
-    (0,gatsby__WEBPACK_IMPORTED_MODULE_3__.navigate)('viewPortfolio');
+    (0,gatsby__WEBPACK_IMPORTED_MODULE_3__.navigate)("viewPortfolio");
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -5096,11 +5210,11 @@ const Portfolio = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "portfolio-grid container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "main-heading white-circle circle"
+    className: "main-heading white-circle cirle"
   }, "Portfolio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "verticle-slider"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: full.indexOf(selectedPortfolio) !== 0 ? "movement back" : 'disabledBtn',
+    className: full.indexOf(selectedPortfolio) !== 0 ? "movement back" : "disabledBtn",
     onClick: () => subtract()
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io__WEBPACK_IMPORTED_MODULE_4__.IoIosArrowUp, {
     className: "color"
@@ -5126,11 +5240,11 @@ const Portfolio = () => {
     id: item.id,
     onClick: () => selectPortfolio(item)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    className: item.id === selectedPortfolio.id ? 'dot-active' : ""
+    className: item.id === selectedPortfolio.id ? "dot-active" : ""
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "next-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, selectedPortfolio.sheettxt), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: full.indexOf(selectPortfolio) !== full.length - 1 ? "movement forwardBtn" : 'disabledBtn',
+    className: full.indexOf(selectPortfolio) !== full.length - 1 ? "movement forwardBtn" : "disabledBtn",
     onClick: () => add()
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io__WEBPACK_IMPORTED_MODULE_4__.IoIosArrowDown, {
     className: "color"
@@ -5243,19 +5357,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Services = () => {
-  const msg = "Welcome to your Gatsby-app";
-  const props = ["about"];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "services",
     className: "flex-display services yellow-bg section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: " container"
+    style: {
+      width: "98%",
+      margin: "0 auto"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "make-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
     className: "main-heading white-circle"
   }, "Our Services"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    className: "content-para"
+    className: "content-para",
+    style: {
+      lineHeight: "17px"
+    }
   }, "Providing you the best blockchain solutions that fit your needs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "services-grid"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5271,7 +5389,7 @@ const Services = () => {
     alt: "blockchain development"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Blockchain Development"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "gray-txt"
-  }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main-box side2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "side2shadow bottom-shadow"
@@ -5284,7 +5402,7 @@ const Services = () => {
     alt: "exchange development"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Exchange Development"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "gray-txt"
-  }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main-box side2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "side2shadow bottom-shadow"
@@ -5297,7 +5415,7 @@ const Services = () => {
     alt: "software development"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Software Development"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "gray-txt"
-  }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main-box side12"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "side12shadow bottom-shadow"
@@ -5310,7 +5428,7 @@ const Services = () => {
     alt: "website development"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Website Development"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "gray-txt"
-  }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main-box side11"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "side11shadow left-shadow"
@@ -5323,7 +5441,7 @@ const Services = () => {
     alt: "application development"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Mobile Application Development"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "gray-txt"
-  }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main-box side21"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "side21shadow left-shadow"
@@ -5336,7 +5454,7 @@ const Services = () => {
     alt: "ui-ux-designing"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "UI-UX-Designing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "gray-txt"
-  }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main-box side21"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "side21shadow left-shadow"
@@ -5349,7 +5467,7 @@ const Services = () => {
     alt: "it consultation strategy"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "IT Consultation Strategy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "gray-txt"
-  }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main-box side13"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "side13shadow left-shadow"
@@ -5362,7 +5480,7 @@ const Services = () => {
     alt: "erp software solutions"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "ERP Software Solutions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "gray-txt"
-  }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry."))))))));
+  }))))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Services);
@@ -5417,7 +5535,7 @@ const Technologies = () => {
     className: "technology"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
     className: "heading"
-  }, "Technologies"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "loreum ipsum has the industry loreum ipsum has the industry loreum ipsum has the industry  ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "Technologies")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "apps"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "app app1"
@@ -5466,7 +5584,7 @@ const Technologies = () => {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     className: "neg-mgn",
     style: {
-      width: '75px'
+      width: "75px"
     },
     src: _images_Android_robot_png__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", {
@@ -5482,7 +5600,7 @@ const Technologies = () => {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     className: "neg-mgn",
     style: {
-      width: '69px'
+      width: "69px"
     },
     src: _images_ios_png__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", {
@@ -5544,7 +5662,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _images_bcd_logo_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../images/bcd-logo.png */ "./src/images/bcd-logo.png");
 /* harmony import */ var _images_menu_icon_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/menu-icon.svg */ "./src/images/menu-icon.svg");
-/* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-icons/hi */ "./node_modules/react-icons/hi/index.esm.js");
+/* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-icons/hi */ "./node_modules/react-icons/hi/index.esm.js");
 /* harmony import */ var _components_home_home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/home/home */ "./src/components/home/home.js");
 /* harmony import */ var _components_about_about__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/about/about */ "./src/components/about/about.js");
 /* harmony import */ var _components_services_comp_services__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/services-comp/services */ "./src/components/services-comp/services.js");
@@ -5555,6 +5673,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_life_at_bcd_life_at_bcd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/life-at-bcd/life-at-bcd */ "./src/components/life-at-bcd/life-at-bcd.js");
 /* harmony import */ var _components_contact_contact__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/contact/contact */ "./src/components/contact/contact.js");
 /* harmony import */ var _components_navbar_navbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/navbar/navbar */ "./src/components/navbar/navbar.js");
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+
 
 
 
@@ -5578,15 +5698,39 @@ const IndexPage = () => {
     0: show,
     1: setShow
   } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const {
+    0: visible,
+    1: setVisible
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("visibles");
 
   function click() {
     jquery__WEBPACK_IMPORTED_MODULE_3___default()(".menu").fadeToggle("slow");
+  } // function Up() {
+  //   // $("html, body").animate(
+  //   //   {
+  //   //     scrollTop: $("#home").offset().top,
+  //   //   },
+  //   //   "slow"
+  //   // );
+  // }
+  //    function Up(){
+  //     $(".top-btn").one('click', function () {  
+  // });
+  //    }
+
+
+  function firstFunction(_callback) {
+    // do some asynchronous work
+    // and when the asynchronous stuff is complete
+    _callback();
   }
 
   function Up() {
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()("html, body").animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_3___default()("#home").offset().top
-    }, "slow");
+    // call first function and pass in a callback function which
+    // first function runs when it has completed
+    firstFunction(function () {
+      (0,gatsby__WEBPACK_IMPORTED_MODULE_16__.navigate)("/#home");
+    });
   }
 
   function moveToPage(id) {
@@ -5655,7 +5799,7 @@ const IndexPage = () => {
             id = "about";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-black-item");
             jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(1).css({
               color: "#FFCB05",
@@ -5685,10 +5829,10 @@ const IndexPage = () => {
             id = "technologies";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-white-item");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('li a[href="#' + id + '"]').addClass("active-black-item");
             jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").css("visibility", "hidden");
             jquery__WEBPACK_IMPORTED_MODULE_3___default()(".spans").eq(4).css({
-              color: "#0007700",
+              color: "#FFCB05",
               visibility: "visible"
             });
           } else if (id === "products") {
@@ -5787,15 +5931,25 @@ const IndexPage = () => {
     }, 500)); // ($('#yourElement').css('position') == 'absolute')
   }
 
+  const style = {
+    textDecoration: "none"
+  };
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
     mounted();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "nav-component"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: "top-content container"
+    className: "top-content padd-x-y",
+    style: {
+      margin: "0 auto",
+      width: "97.2%"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("img", {
     className: "logo",
+    style: {
+      marginLeft: "1px"
+    },
     src: _images_bcd_logo_png__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "nav-menu"
@@ -5808,47 +5962,67 @@ const IndexPage = () => {
     className: "menu-svg",
     src: _images_menu_icon_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("ul", {
+    style: {
+      paddingLeft: "0rem"
+    },
     className: "menu"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#home",
     onClick: () => moveToPage("#about")
   }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#about",
     onClick: () => moveToPage("#about")
   }, "About us")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#services",
     onClick: () => moveToPage("#services")
   }, "Our Services")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#portfolio",
     onClick: () => moveToPage("#portfolio")
   }, "Portfolio")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#technologies",
     onClick: () => moveToPage("#technologies")
   }, "Technologies")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#partners",
     onClick: () => moveToPage("#partners")
   }, "Partners")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#our_team",
     onClick: () => moveToPage("#our_team")
   }, "Our Team")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#bcd-life",
     onClick: () => moveToPage("#bcd-life")
   }, "Life At BCD")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
+    style: style,
     className: "menu-items",
     href: "#contact_us",
     onClick: () => moveToPage("#contact_us")
-  }, "Contact us"), "s"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_15__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
+  }, "Contact us")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_15__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
     className: "top-btn",
     onClick: () => Up()
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_16__.HiOutlineChevronDoubleUp, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", null, "Top")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_home_home__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_about_about__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_services_comp_services__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_technologies_technologies__WEBPACK_IMPORTED_MODULE_10__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_products_products__WEBPACK_IMPORTED_MODULE_11__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_partners_partners__WEBPACK_IMPORTED_MODULE_12__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_life_at_bcd_life_at_bcd__WEBPACK_IMPORTED_MODULE_13__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_contact_contact__WEBPACK_IMPORTED_MODULE_14__["default"], null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_17__.HiOutlineChevronDoubleUp, {
+    style: {
+      fontSize: "1.2rem"
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", {
+    style: {
+      marginTop: "-2px"
+    }
+  }, "Top")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_home_home__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_about_about__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_services_comp_services__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_technologies_technologies__WEBPACK_IMPORTED_MODULE_10__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_products_products__WEBPACK_IMPORTED_MODULE_11__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_partners_partners__WEBPACK_IMPORTED_MODULE_12__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_life_at_bcd_life_at_bcd__WEBPACK_IMPORTED_MODULE_13__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_contact_contact__WEBPACK_IMPORTED_MODULE_14__["default"], null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);

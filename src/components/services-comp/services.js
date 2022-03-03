@@ -16,7 +16,7 @@ const Services = () => {
         <div style={{width:"98%",margin:"0 auto"}}>
           <div className="make-center">
             <h1 className="main-heading white-circle">Our Services</h1>
-            <p className="content-para">
+            <p className="content-para" style={{lineHeight:"17px"}}>
               Providing you the best blockchain solutions that fit your needs
             </p>
           </div>

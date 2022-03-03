@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap');
+@import '../../components/home/home.scss';
 *{
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@ $white:#fff;
 body{
   background: #282828;
   font-size: 16px;
+  overflow-x: hidden;
 }
 section{
   min-height: 100vh;
@@ -78,7 +80,7 @@ a {
   font-size: 30px;
 }
 .pad-all{
-  padding: 26px 8px 0px 0;
+  padding: 29px 8px 0px 0;
 }
 .pad-all1 {
   padding: 30px 0px 15px 0px;
@@ -110,6 +112,7 @@ a {
 }
 .circle {
   background: url('../../images/circle1.svg') no-repeat center right;
+  background-position: 215px 7.5px;
 }
 
 .make-center{
@@ -154,6 +157,7 @@ a {
   border: 2px solid #fff;
   background: #ffc900;
   font-size: 16px;
+  padding-top: 11px;
   cursor: pointer;
 
   span{
@@ -174,7 +178,7 @@ a {
     height: 100px;
   }
   .hire {
-    padding: 13px 25px;
+    padding: 12.5px 25.5px;
   }
   .top-content {
     display: grid;
@@ -251,6 +255,9 @@ a {
 }
 
 @media screen and (max-height: 700px){
+  body{ 
+    overflow-x: hidden;
+  }
   .logo {
     top: 3em;
   }
@@ -258,14 +265,22 @@ a {
     top: 3em;
   }
 }
+
+
 @media screen and (max-width: 1350px) {
+  body {
+    overflow-x: hidden;
+  }
   .nav-component{
     .top-content {
-      padding:14px;
+      padding:14px 12px;
     }
   }
 }
 @media screen and  (max-width:1280px ){
+  body {
+    overflow-x: hidden;
+  }
   .container {
     max-width:1280px;
   }
@@ -283,6 +298,9 @@ a {
   }
 }
 @media screen and  (max-width:900px ){
+  body{
+    overflow-x: hidden;
+  }
   .nav-component{
     &>:last-child {
       .menu-svg {
@@ -293,6 +311,13 @@ a {
 }
 
 @media screen and (max-width: 850px){
+  body{
+    overflow-x: hidden;
+  }
+  .circle {
+    background: url('../../images/circle1.svg') no-repeat center right;
+    background-position: 132px 3px;
+  }
   .nav-component{
     .logo{
       width: 130px;
@@ -301,17 +326,45 @@ a {
     .hire{
       padding: 12px 20px;
     }
+    .top-content{
+      padding: 19px 5px 20px 10px;
+    }
   }
   .bcd-btn{
     font-size: 14px;
   }
+  
+    
+    
 }
 @media screen and  (max-width:640px ){
+  body{
+    overflow-x: hidden;
+  }
   section{
     height: 100%;
   }
+
+  .nav-component{
+    .top-content{
+      padding: 19px 5px 20px 10px;
+    }
+  }
 }
 @media screen and  (max-width:540px){
+  body{
+    overflow-x: hidden;
+  }
+  .circle {
+    background: url('../../images/circle1.svg') no-repeat center right;
+    background-position: 92px 3px;
+  }
+  
+  .nav-component{
+    .top-content{
+      padding: 19px 5px 20px 10px;
+    }
+  }
   .main-heading{
     font-size: 2.4em;
   }
@@ -325,26 +378,42 @@ a {
       }
     }
   }
+
+ 
+}
+
+@media screen and (max-width:490px) {
+   #hire {
+     padding-top:13px;
+     padding-bottom:13px;
+   }
 }
 @media screen and (max-width:340px) {
+  body{
+    overflow-x: hidden;
+  }
   .nav-component{
     .top-content{
       padding: 20px 5px 20px 10px;
     }
   }
+  .bcd-btn{
+    margin-right: 5px;
+   } 
 }
-// @import '../scss/components/home.scss';
-// @import '../scss/components/about.scss';
-// @import '../scss/components/services.scss';
-// @import '../scss/components/portfolio.scss';
-// @import '../scss/components/technologies.scss';
-// @import '../scss/components/partners.scss';
-// @import '../scss/components/team.scss';
-// @import '../scss/components/contact.scss';
-// @import '../scss/components/navbar.scss';
-// @import '../scss/components/job-application.scss';
-// @import '../scss/components/life-at-bcd.scss';
-// @import '../scss/components/products.scss';
+
+
+// @import '../../components/about/about.scss';
+// @import '../../components/services/services.scss';
+// @import '../../components/portfolio/portfolio.scss';
+// @import '../../components/technologies/technologies.scss';
+// @import '../../components/partners/partners.scss';
+// @import '../../components/team/team.scss';
+// @import '../../components/contact/contact.scss';
+// @import '../../components/navbar/navbar.scss';
+// @import '../../components/home/job-application/jobApplication.scss';
+// @import '../../components/life-at-bcd/life-at-bcd.scss';
+// @import '../../components/products/products.scss';
 // @import './careers.scss';
 // @import './viewPortfolio.scss';
 .show{

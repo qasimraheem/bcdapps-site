@@ -191,6 +191,15 @@
 
 .about-section {
   height: auto;
+  position: relative;
+    .circle {
+      top:45px;
+      left:354px;
+      position: absolute;
+      background: url('../../images/Circle1.svg') no-repeat;
+      background-position:117px 5px;
+
+    }
 }
 
 .custom-grid {
@@ -237,12 +246,17 @@
     border: none !important;
   }
   .about-section {
-    .circle {
-      background: url('../../images/Circle1.svg') 74% 53% no-repeat !important;
-    }
-    .circle2{
-      background: url('../../images/Circle1.svg') no-repeat 117px 1px !important;
-    }
+    
+    position: relative;
+      .circle {
+        margin-top: 30px;
+        top:-65px;
+        left:154px;
+        position: absolute;
+        background: url('../../images/Circle1.svg') no-repeat;
+        background-position:117px 5px;
+  
+      }
   }
   .about-us-para {
     text-align: center !important;
@@ -399,7 +413,25 @@
     padding-top: 100px;
   }
 }
+@media screen and (max-width: 1200px){
+  .about-section {
+    
+    position: relative;
+      .circle {
+        margin-top: 34px;
+        top:-65px;
+        left:154px;
+        position: absolute;
+        background: url('../../images/Circle1.svg') no-repeat;
+        background-position:117px 5px;
+  
+      }
+  }
 
+  .about-us-para {
+    margin-top: 70px;
+  }
+}
 // .about .work-section .work-content
 @media screen and (max-width:900px) {
   .top-btn {
@@ -436,9 +468,23 @@
       } 
     } 
   }
+  .about-section {
+    
+    position: relative;
+      .circle {
+        margin-top: 34px;
+        top:-65px;
+        left:154px;
+        position: absolute;
+        background: url('../../images/Circle1.svg') no-repeat;
+        background-position:70px -3px;
+  
+      }
+  }
 }
 @media screen and (max-width:478px){
   .about{
+    overflow-x: hidden;
     .about-section{
       .about-left{
         text-align: center;

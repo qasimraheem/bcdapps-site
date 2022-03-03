@@ -184,6 +184,7 @@ $black: #000000;
 
 @media screen and (max-width: 490px) {
   .partners {
+    overflow-x: hidden;
     .partners-header {
       display: grid;
       align-items: center;
@@ -201,6 +202,7 @@ $black: #000000;
 @media screen and (max-width: 400px) {
   .partners {
     padding: 0 0 50px;
+    overflow-x: hidden;
     .partners-name {
       padding: 0;
       margin: 0 auto;

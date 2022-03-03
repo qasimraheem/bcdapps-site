@@ -400,6 +400,9 @@
   }
   
   @media screen and (max-width:373px) {
+    .bcd-life{
+      overflow-x: hidden;
+    }
     .bcd-life-right-container {
       &>figure {
         width: 318px;

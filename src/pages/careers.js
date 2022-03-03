@@ -3,8 +3,9 @@ import "./scss/careers.scss";
 import Select from "react-select";
 import whiteLogo from "../images/white-logo.png";
 import cvIcon from "../images/cv.svg";
-import crossIcon from "../images/cross.png";
+// import crossIcon from "../images/cross.png";
 import { navigate } from "gatsby";
+// import JobApplication from "../components/job-application/jobApplication";
 
 const Careers = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -39,7 +40,7 @@ const Careers = () => {
   }
 
   return (
-    <section className="careers black-bg flex-display" id="careers">
+    <section className="careers black-bg flex-display" id="careers" style={{paddingTop:"30px"}}>
       <div className="nav-component">
         <div className="top-content containered">
           <img src={whiteLogo} className="logo" />

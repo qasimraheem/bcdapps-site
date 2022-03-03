@@ -118,6 +118,7 @@
   .products{
     grid-template-columns: 1fr 1fr;
     padding: 40px 20px;
+    overflow-x: hidden;
     .block-chain-bg {
       overflow: visible;
       padding: 0;

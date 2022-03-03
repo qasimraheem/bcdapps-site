@@ -20,10 +20,10 @@ const Technologies = () => {
       <div className="tec-container container">
         <div className="technology">
           <h1 className="heading">Technologies</h1>
-          <p>
+          {/* <p>
             loreum ipsum has the industry loreum ipsum has the industry loreum
             ipsum has the industry{" "}
-          </p>
+          </p> */}
         </div>
         <div className="apps">
           <div className="app app1">

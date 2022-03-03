@@ -48,7 +48,7 @@ const ViewPortfolio = () => {
       bullets: [],
       foo: ganderTxt,
       description:
-        "Gander is the Block Explorer for the Expanse Blockchain. A Block Explorer is basically a search engine that allows users to easily lookup, confirm and validate transactions that have taken place on the Expanse Blockchain.<br><br>",
+        "Gander is the Block Explorer for the Expanse Blockchain. A Block Explorer is basically a search engine that allows users to easily lookup, confirm and validate transactions that have taken place on the Expanse Blockchain.",
       // images: ['tokenlab-final.png','Gander-img.jpg', 'gander2.png', 'gander3.png', 'gander4.png', 'gander5.png']
       images: ["g1.png", "g2.png", "g3.png", "g4.png"],
       hasApp: false,
@@ -61,7 +61,7 @@ const ViewPortfolio = () => {
       bullets: [],
       foo: { footerLogo },
       description:
-        " Tokenlab is just what it sounds like-a laboratory for creating tokens for crowd sales, tech projects-anything you can imagine.<br><br> It is also a super easy way for people to launch ERC 20 tokens on the Expanse.Tech™ platform with time-locked, integrated ICO contracts.<br><br> ",
+        " Tokenlab is just what it sounds like-a laboratory for creating tokens for crowd sales, tech projects-anything you can imagine.<br><br> It is also a super easy way for people to launch ERC 20 tokens on the Expanse.Tech™ platform with time-locked, integrated ICO contracts.",
       images: ["tokenlab-final.png", "t1.png", "t5.png", "t4.png"],
       hasApp: false,
     },
@@ -72,7 +72,7 @@ const ViewPortfolio = () => {
       image: cliIbmLogo,
       bullets: [],
       description:
-        "Cliiimb is a next generation communication tool for mobile devices. It was created so that local professionals can collectively work together to connect and engage our young people on relevant issues that affect them. <br><br>",
+        "Cliiimb is a next generation communication tool for mobile devices. It was created so that local professionals can collectively work together to connect and engage our young people on relevant issues that affect them.",
       images: ["C1.png", "C2.png", "C3.png", "C4.png"],
       hasApp: true,
       playStoreLink:
@@ -101,7 +101,7 @@ const ViewPortfolio = () => {
       bullets: [],
       foo: { dwsLogo },
       description:
-        "Whether you are a drone pilot or you need a drone pilot for a project, DWS offers the resources you need to secure what you need from this industry.<br><br> It is developed in order to connect the right people with the right skills to the jobs that need them. <br><br>",
+        "Whether you are a drone pilot or you need a drone pilot for a project, DWS offers the resources you need to secure what you need from this industry.It is developed in order to connect the right people with the right skills to the jobs that need them.",
       images: [
         "D1.png",
         "D2.png",
@@ -132,7 +132,7 @@ const ViewPortfolio = () => {
       bullets: [],
       foo: { dwsLogo },
       description:
-        "Coin Monster is a fun, thrilling and also a profitable smartphone mining game and expected in over 180 countries.<br><br>",
+        "Coin Monster is a fun, thrilling and also a profitable smartphone mining game and expected in over 180 countries.",
       images: ["N1.png", "N2.png", "N3.png", "N4.png"],
       hasApp: false,
     },
@@ -263,7 +263,7 @@ const ViewPortfolio = () => {
         <div>
           <div className="folio-col">
             <div className="portfolio-frst-col">
-              <svg
+              {/* <svg
                 className="mouse-svg"
                 xmlns="http://www.w3.org/2000/svg"
                 width="33"
@@ -276,7 +276,7 @@ const ViewPortfolio = () => {
                   className="cls-1"
                   d="M16.5,55A16.5,16.5,0,0,1,0,38.5v-22a16.5,16.5,0,1,1,33,0v22A16.5,16.5,0,0,1,16.5,55ZM31,17.5a14.5,14.5,0,0,0-29,0v20a14.5,14.5,0,0,0,29,0v-20ZM16.5,22A2.5,2.5,0,0,1,14,19.5v-6a2.5,2.5,0,0,1,5,0v6A2.5,2.5,0,0,1,16.5,22Z"
                 />
-              </svg>
+              </svg> */}
               <figure className="animate-angle">
                 <img
                   src={ganderImg}
@@ -308,12 +308,12 @@ const ViewPortfolio = () => {
                     <img className="img-1" src={project.image} />
                   </figure>
                   <div className="text-1">
-                    <h3 id="gander2">{project.bold}</h3>
+                    <h3 style={{fontSize:"1.17em",fontWeight:"bold",marginBottom:"-4px"}} id="gander2">{project.bold}</h3>
                     <br />
-                    <p>{project.description}</p>
+                    <p style={{lineHeight:"18px",marginBottom:"-4px"}}>{project.description}</p>
                     <ul className="text-list">
                       {project?.bullets.map((bullet, index) => (
-                        <li key={index}>
+                        <li style={{marginBottom:"-5px"}} key={index}>
                           <span className="dot-list"></span>
                           {bullet}
                         </li>

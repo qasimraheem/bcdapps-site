@@ -3,8 +3,9 @@
   .portfolio-grid {
     display: flex;
     align-items: center;
-    margin: 10px 184px 10px 30px;
+    margin: 10px 184px 10px 0px;
     flex-wrap: wrap;
+    position:relative;
     .port-circle {
       padding: 25px 7px 13px 5px;
       margin-right: 70px;
@@ -56,6 +57,7 @@
           }
         }
       }
+      
       .border-black {
         position: relative;
         border-width: 7px;
@@ -78,7 +80,7 @@
             font-size: 18px;
           }
         }
-
+       
         .slide-dots {
           position: absolute;
           left: -20px;
@@ -137,6 +139,11 @@
 .disabledBtn {
   pointer-events: none;
 }
+
+.cirle {
+  background: url('../../images/circle1.svg') no-repeat;
+  background-position: 115px 10px;
+}
 @media screen and (min-width: 2000px) {
   .portfolio {
     .portfolio-grid {
@@ -157,7 +164,21 @@
 //     }
 //   }
 // }
+.cirle {
+        background: url('../../images/circle1.svg') no-repeat;
+        background-position: 115px 1px;
+      }
+// @media screen and (min-width: 1560px){
+//    .container{
+//      max-width: 1360px;
+//    }
+// }
 
+// @media screen and (min-width: 1560px){
+//   .container{
+//     max-width: 1560px;
+//   }
+// }
 @media screen and (max-height: 700px) {
   .movement {
     width: 50px;
@@ -221,18 +242,44 @@
       }
     }
   }
+  .cirle {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background: url('../../images/circle1.svg') no-repeat;
+    background-position: 110px -1px;
+    overflow-y: auto;
+  }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 552px) {
+  .cirle {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background: url('../../images/circle1.svg') no-repeat;
+    background-position: 110px -1px;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 525px) {
   .portfolio {
+    overflow-x: hidden;
     .portfolio-grid {
       .verticle-slider {
         margin: -27px auto -50px !important;
       }
     }
   }
+  .cirle {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background: url('../../images/circle1.svg') no-repeat;
+    background-position: 70px -3px;
+    overflow-y: auto;
+  }
 }
 @media screen and (max-width: 434px) {
   .portfolio {
+    overflow-x: hidden;
     .portfolio-grid {
       .verticle-slider {
         margin: -27px -50px -50px !important;
@@ -242,6 +289,7 @@
 }
 @media screen and (max-width: 407px) {
   .portfolio {
+    overflow-x: hidden;
     .portfolio-grid {
       .verticle-slider {
         transform: scale(0.6) !important;
@@ -252,6 +300,7 @@
 }
 @media screen and (max-width: 332px) {
   .portfolio {
+    overflow-x: hidden;
     .portfolio-grid {
       .verticle-slider {
         margin: -24px -78px -50px !important;

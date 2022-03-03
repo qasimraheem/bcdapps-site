@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.scss";
 import $ from "jquery";
+import { navigate } from "gatsby";
 
 const Navbar = () => {
   const [selectedNav, setSelectedNav] = useState({});
@@ -10,43 +11,43 @@ const Navbar = () => {
       index: 0,
       name: "Home",
       link: "#home",
-      color: "",
+      class: "active-white-item nav-items"
     },
     {
       index: 1,
       name: "About us",
       link: "#about",
-      color: "black",
+      class: "active-black-item nav-items"
     },
     {
       inex: 2,
       name: "Our Services",
       link: "#services",
-      color: "",
+      class: "active-white-item nav-items"
     },
     {
       index: 3,
       name: "Portfolio",
       link: "#portfolio",
-      color: "",
+      class: "active-white-item nav-items"
     },
     {
       index: 4,
       name: "Technologies",
       link: "#technologies",
-      color: "black",
+      class: "active-black-item nav-items"
     },
     {
       index: 5,
       name: "Our Products",
       link: "#products",
-      color: "",
+      class: "active-white-item nav-items"
     },
     {
       index: 6,
       name: "Partners",
       link: "#partners",
-      color: "",
+      class: "active-white-item nav-items"
     },
     // {
     //   name: 'Our Team',
@@ -57,26 +58,20 @@ const Navbar = () => {
       index: 7,
       name: "Life At BCD",
       link: "#bcd-life",
-      color: "",
+      class: "active-white-item nav-items"
     },
     {
       index: 8,
       name: "Contact us",
       link: "#contact_us",
-      color: "",
+      class: "active-white-item nav-items"
     },
   ];
 
   function selectNav(val) {
-    setSelectedNav(val);
-    $("html, body").animate(
-      {
-        scrollTop: $(val.link).offset().top,
-      },
-      "slow"
-    );
+    return navigate(val.link);
   }
-
+   
   // function moveToPage(id) {
   //   setSelectedNav(id)
   //   $('html, body').animate({
@@ -105,6 +100,19 @@ const Navbar = () => {
     }
   }
 
+  function style (item) {
+    if(item.index){
+      return "active-black-item nav-items"
+    } else {
+      return "nav-items"
+    }
+      
+  }
+
+
+
+  const history = window.location.href;
+  console.log("location:::",history)
   useEffect(() => {
     const unmount = mounted();
     return unmount;
@@ -112,23 +120,17 @@ const Navbar = () => {
 
   return (
     <nav className="bcd-nav bcd-nav2">
-      <ul className="nav_ul">
+      <ul style={{marginTop:"6px"}}>
         {links.map((item) => (
-          <li onClick={() => selectNav(item)} key={item.index}>
+          <li key={item.index}>
             <a
-              className={
-                (selectedNav?.index === item.index &&
-                  "active-white-item nav-items") ||
-                (item.index === selectedNav.index && item.color === "black")
-                  ? "active-black-item nav-items"
-                  : "nav-items"
-              }
+              className="nav-items"
               href={item.link}
             >
               <div>
                 <span className="spans">{item.name}</span>
               </div>
-              <div className="nav-circle"></div>
+              <div className="nav-circle" onClick={() => selectNav(item)}></div>
             </a>
           </li>
         ))}

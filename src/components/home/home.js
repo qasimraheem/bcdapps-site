@@ -42,19 +42,23 @@ const Home = () => {
       <div>
         <div className="container home-container">
           <div className="home-content black-txt">
-            <h1 className="circle pad-all main-heading">Codifying</h1>
-            <h1 className="main-heading">
+            <h1 className="circle pad-all main-heading" style={{marginBottom:"7px",paddingBottom:"7px"}}>Codifying</h1>
+            <h1 className="main-heading" style={{marginBottom:"-2.2px",marginTop:"-2.5px"}}>
               <span className="yellow-txt">into</span> Reality
             </h1>
-            <p style={{marginBottom:"-1rem"}} className="mt20 content-para">
-              Providing you the best blockchain solutions<br/>
+            <p style={{display:"flex", flexDirection:"column",marginBottom:"-15px"}} className="mt20 content-para">
+              <p>
+              Providing you the best blockchain solutions
+              </p>
+              <p style={{marginTop:'-21px'}}>
               that fit your needs
+              </p>
             </p>
             <p className="content-para"></p>
             <div className="hire-us-container">
               <a
                 className="bcd-btn"
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none" , marginTop:"0px",padding:"12.5px 25px"}}
                 onClick={() => portfolio()}
               >
                 View Portfolio

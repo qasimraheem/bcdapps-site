@@ -1836,106 +1836,106 @@ const ViewPortfolio = () => {
   // } from 'vue-carousel';
 
   const projects = [{
-    name: 'Gander',
-    bold: 'The Block Explorer for the Expanse Blockchain.',
-    link: 'https://gander.tech/',
+    name: "Gander",
+    bold: "The Block Explorer for the Expanse Blockchain.",
+    link: "https://gander.tech/",
     image: _images_gander_text_png__WEBPACK_IMPORTED_MODULE_5__["default"],
     bullets: [],
     foo: _images_gander_text_png__WEBPACK_IMPORTED_MODULE_5__["default"],
-    description: 'Gander is the Block Explorer for the Expanse Blockchain. A Block Explorer is basically a search engine that allows users to easily lookup, confirm and validate transactions that have taken place on the Expanse Blockchain.<br><br>',
+    description: "Gander is the Block Explorer for the Expanse Blockchain. A Block Explorer is basically a search engine that allows users to easily lookup, confirm and validate transactions that have taken place on the Expanse Blockchain.",
     // images: ['tokenlab-final.png','Gander-img.jpg', 'gander2.png', 'gander3.png', 'gander4.png', 'gander5.png']
-    images: ['g1.png', 'g2.png', 'g3.png', 'g4.png'],
+    images: ["g1.png", "g2.png", "g3.png", "g4.png"],
     hasApp: false
   }, {
-    name: 'Tokenlab',
-    bold: 'A laboratory for creating tokens',
-    link: 'https://www.tokenlab.io/',
+    name: "Tokenlab",
+    bold: "A laboratory for creating tokens",
+    link: "https://www.tokenlab.io/",
     image: _images_tokenlablogo_white_png__WEBPACK_IMPORTED_MODULE_10__["default"],
     bullets: [],
     foo: {
       footerLogo: _images_footer_logo_0c1aa2c_png__WEBPACK_IMPORTED_MODULE_8__["default"]
     },
-    description: ' Tokenlab is just what it sounds like-a laboratory for creating tokens for crowd sales, tech projects-anything you can imagine.<br><br> It is also a super easy way for people to launch ERC 20 tokens on the Expanse.Tech™ platform with time-locked, integrated ICO contracts.<br><br> ',
-    images: ['tokenlab-final.png', 't1.png', 't5.png', 't4.png'],
+    description: " Tokenlab is just what it sounds like-a laboratory for creating tokens for crowd sales, tech projects-anything you can imagine.<br><br> It is also a super easy way for people to launch ERC 20 tokens on the Expanse.Tech™ platform with time-locked, integrated ICO contracts.",
+    images: ["tokenlab-final.png", "t1.png", "t5.png", "t4.png"],
     hasApp: false
   }, {
-    name: 'Cliiimb',
-    bold: 'Impacting Young People to Be the Best Version of Themselves',
-    link: 'https://cliiimb.com/',
+    name: "Cliiimb",
+    bold: "Impacting Young People to Be the Best Version of Themselves",
+    link: "https://cliiimb.com/",
     image: _images_cliiimb_logo_svg__WEBPACK_IMPORTED_MODULE_11__["default"],
     bullets: [],
-    description: 'Cliiimb is a next generation communication tool for mobile devices. It was created so that local professionals can collectively work together to connect and engage our young people on relevant issues that affect them. <br><br>',
-    images: ['C1.png', 'C2.png', 'C3.png', 'C4.png'],
+    description: "Cliiimb is a next generation communication tool for mobile devices. It was created so that local professionals can collectively work together to connect and engage our young people on relevant issues that affect them.",
+    images: ["C1.png", "C2.png", "C3.png", "C4.png"],
     hasApp: true,
-    playStoreLink: 'https://play.google.com/store/apps/details?id=io.cliiimb.app'
+    playStoreLink: "https://play.google.com/store/apps/details?id=io.cliiimb.app"
   }, {
-    name: 'Luna Wallet',
-    bold: 'The next generation of the Expanse Luna Wallet',
-    link: 'https://github.com/expanse-org/luna-wallet',
+    name: "Luna Wallet",
+    bold: "The next generation of the Expanse Luna Wallet",
+    link: "https://github.com/expanse-org/luna-wallet",
     image: _images_luna_png__WEBPACK_IMPORTED_MODULE_12__["default"],
-    bullets: ['- Generate a wallet', '- Import the wallet via private key /JSON Key Store File.', '- Generate and import BIP39 mnemonic codes to create the HD Wallets'],
-    description: 'The next generation of the Expanse Luna Wallet provides the following features.',
-    images: ['L1.png', 'l2.png', 'l3.png', 'Lunawallet-small-img.jpg'],
+    bullets: ["- Generate a wallet", "- Import the wallet via private key /JSON Key Store File.", "- Generate and import BIP39 mnemonic codes to create the HD Wallets"],
+    description: "The next generation of the Expanse Luna Wallet provides the following features.",
+    images: ["L1.png", "l2.png", "l3.png", "Lunawallet-small-img.jpg"],
     hasApp: false
   }, {
-    name: 'DWS',
-    bold: 'A Professional platform for Pilots and Customers',
-    link: 'https://droneworkforcesolutions.com/',
+    name: "DWS",
+    bold: "A Professional platform for Pilots and Customers",
+    link: "https://droneworkforcesolutions.com/",
     image: _images_Dws_logo_svg__WEBPACK_IMPORTED_MODULE_9__["default"],
     bullets: [],
     foo: {
       dwsLogo: _images_Dws_logo_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
     },
-    description: 'Whether you are a drone pilot or you need a drone pilot for a project, DWS offers the resources you need to secure what you need from this industry.<br><br> It is developed in order to connect the right people with the right skills to the jobs that need them. <br><br>',
-    images: ['D1.png', 'D2.png', 'D3.png', 'D6.png', 'D5.png', 'DWS-final.png'],
+    description: "Whether you are a drone pilot or you need a drone pilot for a project, DWS offers the resources you need to secure what you need from this industry.It is developed in order to connect the right people with the right skills to the jobs that need them.",
+    images: ["D1.png", "D2.png", "D3.png", "D6.png", "D5.png", "DWS-final.png"],
     hasApp: false
   }, {
-    name: 'Syncfab',
-    bold: 'Manufacture Easily & Securely on Blockchain',
-    link: 'https://syncfab.com/',
+    name: "Syncfab",
+    bold: "Manufacture Easily & Securely on Blockchain",
+    link: "https://syncfab.com/",
     image: _images_syncfabLogo_png__WEBPACK_IMPORTED_MODULE_13__["default"],
     bullets: [],
     foo: {
       dwsLogo: _images_Dws_logo_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
     },
-    description: 'Available capacity, transparent order tracking, and purchase order management secured by blockchain',
-    images: ['S2.png', 'S3.png', 'S4.png', 'S5.png', 'S6.png'],
+    description: "Available capacity, transparent order tracking, and purchase order management secured by blockchain",
+    images: ["S2.png", "S3.png", "S4.png", "S5.png", "S6.png"],
     hasApp: false
   }, {
-    name: 'Nix Coin',
-    bold: 'The world\'s first read smartphone mining game!',
-    link: 'https://www.nixblock.io/',
+    name: "Nix Coin",
+    bold: "The world's first read smartphone mining game!",
+    link: "https://www.nixblock.io/",
     image: _images_NixcoinLogo_png__WEBPACK_IMPORTED_MODULE_14__["default"],
     bullets: [],
     foo: {
       dwsLogo: _images_Dws_logo_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
     },
-    description: 'Coin Monster is a fun, thrilling and also a profitable smartphone mining game and expected in over 180 countries.<br><br>',
-    images: ['N1.png', 'N2.png', 'N3.png', 'N4.png'],
+    description: "Coin Monster is a fun, thrilling and also a profitable smartphone mining game and expected in over 180 countries.",
+    images: ["N1.png", "N2.png", "N3.png", "N4.png"],
     hasApp: false
   }, {
-    name: 'Arawtoken',
-    bold: 'The Decentralized Payment for E-Commerce Ecosystem.',
-    link: 'https://arawtoken.io/',
+    name: "Arawtoken",
+    bold: "The Decentralized Payment for E-Commerce Ecosystem.",
+    link: "https://arawtoken.io/",
     image: _images_arawtokenLogo_png__WEBPACK_IMPORTED_MODULE_15__["default"],
     bullets: [],
     foo: {
       dwsLogo: _images_Dws_logo_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
     },
-    description: 'An end-to-end solutions for E-Commerce Marketplace, Touch & Pay Cryptocurrency Card, Online Cryptocurrency Payment, and Unified Reward System powered by the Ethereum Blockchain',
-    images: ['Aw1.png', 'Aw2.png', 'Aw3.png', 'Aw4.png'],
+    description: "An end-to-end solutions for E-Commerce Marketplace, Touch & Pay Cryptocurrency Card, Online Cryptocurrency Payment, and Unified Reward System powered by the Ethereum Blockchain",
+    images: ["Aw1.png", "Aw2.png", "Aw3.png", "Aw4.png"],
     hasApp: false
   }, {
-    name: 'EXPEX',
-    bold: 'An expanse wallet and decentralized exchange .',
-    link: 'http://beta.expex.io/',
+    name: "EXPEX",
+    bold: "An expanse wallet and decentralized exchange .",
+    link: "http://beta.expex.io/",
     image: _images_expex_logo_png__WEBPACK_IMPORTED_MODULE_16__["default"],
     bullets: [],
     foo: {
       dwsLogo: _images_Dws_logo_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
     },
-    description: 'EXPEX allows user to generate the wallet and access the already existing one through watch only, Metamask, Trezor, Ledger Wallet, Key store, Mnemonics and Private Key. <br><br> Moreover, we can send, receive and trade with the four main currencies EXP, LAB, PEX and WEXP.',
-    images: ['expex1.png', 'expex2.png', 'expex3.png'],
+    description: "EXPEX allows user to generate the wallet and access the already existing one through watch only, Metamask, Trezor, Ledger Wallet, Key store, Mnemonics and Private Key. <br><br> Moreover, we can send, receive and trade with the four main currencies EXP, LAB, PEX and WEXP.",
+    images: ["expex1.png", "expex2.png", "expex3.png"],
     hasApp: false
   }];
 
@@ -1960,7 +1960,7 @@ const ViewPortfolio = () => {
     //   //  console.log(that.projects[that.a++]);
     //   //  var position = window.pageYOffset;
     //   // var target = $('#portfolio').offset().top;
-    //   // if 
+    //   // if
     //   // console.log("target" , target);
     //   // console.log("position" ,position);
     //   // if( position == 1 ){
@@ -2030,18 +2030,7 @@ const ViewPortfolio = () => {
     className: "folio-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "portfolio-frst-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
-    className: "mouse-svg",
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "33",
-    height: "55",
-    viewBox: "0 0 33 55"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-    id: "Rounded_Rectangle_4",
-    "data-name": "Rounded Rectangle 4",
-    className: "cls-1",
-    d: "M16.5,55A16.5,16.5,0,0,1,0,38.5v-22a16.5,16.5,0,1,1,33,0v22A16.5,16.5,0,0,1,16.5,55ZM31,17.5a14.5,14.5,0,0,0-29,0v20a14.5,14.5,0,0,0,29,0v-20ZM16.5,22A2.5,2.5,0,0,1,14,19.5v-6a2.5,2.5,0,0,1,5,0v6A2.5,2.5,0,0,1,16.5,22Z"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", {
     className: "animate-angle"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _images_gander_png__WEBPACK_IMPORTED_MODULE_7__["default"],
@@ -2065,10 +2054,23 @@ const ViewPortfolio = () => {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "text-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    style: {
+      fontSize: "1.17em",
+      fontWeight: "bold",
+      marginBottom: "-4px"
+    },
     id: "gander2"
-  }, project.bold), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, project.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+  }, project.bold), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: {
+      lineHeight: "18px",
+      marginBottom: "-4px"
+    }
+  }, project.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
     className: "text-list"
   }, project === null || project === void 0 ? void 0 : project.bullets.map((bullet, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    style: {
+      marginBottom: "-5px"
+    },
     key: index
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "dot-list"

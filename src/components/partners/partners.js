@@ -28,7 +28,8 @@ const Partners = () => {
             <img src={expanseLogopic} />
             <p className="content-para">
               <span className="line-txt">Expanse</span>
-              <a
+              <a 
+                target="_blank"
                 style={{ textDecoration: "none" }}
                 href="https://expanse.tech/"
               >
@@ -41,6 +42,7 @@ const Partners = () => {
             <p className="content-para">
               <span className="line-txt">IdeoFusion</span>
               <a
+                target="_blank"
                 style={{ textDecoration: "none" }}
                 href="https://www.ideofuzion.com/"
               >
@@ -53,6 +55,7 @@ const Partners = () => {
             <p className="content-para">
               <span className="line-txt">Reactive Space</span>
               <a
+                target="_blank"
                 style={{ textDecoration: "none" }}
                 href="https://reactivespace.com/"
               >
@@ -64,7 +67,7 @@ const Partners = () => {
             <img src={rnsLogopic} />
             <p className="content-para">
               <span className="line-txt">RNS Solution</span>
-              <a style={{ textDecoration: "none" }} href="https://rnssol.com/">
+              <a target="_blank" style={{ textDecoration: "none" }} href="https://rnssol.com/">
                 {"Website >>"}
               </a>
             </p>

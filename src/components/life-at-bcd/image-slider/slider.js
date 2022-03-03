@@ -15,7 +15,7 @@ const Slideshow = ({closeSlider, src, next, prev,img}) => {
     return (
     
       <div className="slide-container">
-          <button className='btn-close' style={{color:"white"}} onClick={() => closeSlider()}>x</button>
+          <button className='closer' style={{color:"white"}} onClick={() => closeSlider()}>x</button>
           <button className='btn-prev' onClick={() => prev()}><HiChevronLeft/></button>
           <div className='zoomed-img'>
          

@@ -35,7 +35,7 @@
   }
   .bcd-btn{
     margin: 20px 0;
-    padding: 15px 20px;
+    padding: 13px 20px;
     color: black;
     span{
       border-radius: 50%;
@@ -48,6 +48,7 @@
   .btn-direction{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   .bcd-btn2{
     color: #fff;
     border-radius: 6px;
@@ -171,6 +172,13 @@
 
                              //media queries
 
+@media screen and  (min-width:1540px ){
+  .contact_us {
+    padding: 40px 160px;
+    }
+                       
+}
+
 @media screen and  (max-height:720px ){
   .contact_us {
     .cont-container{
@@ -183,10 +191,9 @@
     }
     .btn-direction{
       display: flex;
-      align-items: center;
     .bcd-btn{
       margin: 15px 2px;
-      padding: 15px 20px;
+      padding: 13px 20px;
       font-size: 15px;
     }
   }
@@ -249,6 +256,9 @@
   }
 }
 @media screen and  (max-width:480px ){
+  .contact_us {
+    overflow-x: hidden;
+  }
   .invisible-hire-btn2{
     display: inline-block;
   }

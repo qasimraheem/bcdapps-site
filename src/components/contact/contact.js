@@ -13,17 +13,54 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
-  const [message, setMessage] = useState("");
+  const [numberError, setNumberError] = useState("");
+  const [emialError, setEmailError] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [message, setMessage] = useState('')
 
-  const emailData = {
-    name: name,
-    email: email,
-    phoneNumber: phoneNumber,
-    message: message,
-  };
+
+
+   function ValidateEmail() {
+      if(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+        console.log("email is invalid")
+        setEmailError("valid")
+      } else {
+        setEmailError("Email is not valid")
+        return false
+      } 
+   }
+  
+
+
+   function ValidateUsername() {
+      if ( name !== '') {
+         console.log("Username is valid");
+         setNameError("valid")
+      } else {
+         setNameError("Enter your name")
+         return false
+      }
+   }
+
+  function ValidatephoneNumber () {
+    if(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(phoneNumber)){
+        console.log("Number is valid")
+        setNumberError("valid")
+    } else {
+           setNumberError("Number is not invalid")
+           return false
+    }
+  }
 
   function currentOpening() {
     navigate("careers");
+  }
+  
+
+  function bcdlife() {
+    
+    navigate("#bcd-life")
+      
   }
 
   function showLoader() {
@@ -43,16 +80,79 @@ const Contact = () => {
       "slow"
     );
   }
+  
 
-  function sendForm() {
-    showLoader();
-
-    axios.post("http://172.25.33.105:8081/sendMail", emailData).then((res) => {
-      hideLoader();
-    });
+  const emailData = {
+    message,
+    email,
+    phoneNumber,
+    message
   }
-  useEffect(() => {}, []);
+  async function sendForm() {
+    ValidateEmail();
+    ValidateUsername();
+    ValidatephoneNumber();
+    if(nameError === "" || emialError === "" || numberError === "" || emialError === "Number is not invalid" || nameError === "Enter your name" || numberError === "Number is not invalid"){
+      return console.log("not valid Credentials")
+    } else {
+       showLoader();
+       try{
+        await axios.post("http://172.25.33.105:8081/sendMail", emailData);
+        hideLoader();
+        // ValidateEmail(name);
+        // ValidateUsername(email);
+        // ValidatephoneNumber(phoneNumber)
+      } catch(e) {
+        console.log("Error::",e)
+      }
+    }
+}
 
+function handleNameInput(e) {
+  setName(e.target.value);
+  if(name !== ''){
+    console.log("Username is valid");
+    setNameError("valid")
+  } else if(name === ''){
+    setNameError('valid')
+  }else {
+    setNameError("Enter your name")
+  }
+}
+
+function handleNumberInput(e) {
+  setPhoneNumber(e.target.value);
+  if(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(phoneNumber)){
+    console.log("Number is valid")
+    setNumberError("valid")
+} else if(phoneNumber === null){
+    setNumberError('valid')
+} else {
+       setNumberError("Number is not invalid")
+       return false
+}
+}
+
+function handleEmailInput(e) {
+  setEmail(e.target.value);
+  if(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+    console.log("email is invalid")
+    setEmailError("valid")
+  } else if(email === ''){
+    setEmailError('valid')
+  } else {
+    setEmailError("Email is not valid")
+    return false
+  } 
+}
+
+  useEffect(() => {
+    
+
+  }, []);
+   console.log(nameError);
+   console.log(emialError);
+   console.log(numberError)
   return (
     <section
       id="contact_us"
@@ -90,7 +190,7 @@ const Contact = () => {
               name="phone_no"
               placeholder="Phone#"
               value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              onChange={(e) => handleNumberInput(e)}
             />
             <textarea
               className="inputs gray-txt"
@@ -105,12 +205,12 @@ const Contact = () => {
         </div>
       </section>
       <div>
-        <div className="container cont-container">
+        <div className="cont-container">
           <div>
             <div className="technology">
-              <h1 className="heading">Contact Us</h1>
+              <h1 style={{fontWeight:"600",marginBottom:"0px"}} className="heading">Contact Us</h1>
               <div className="address">
-                <p>
+                <p style={{lineHeight:"17px"}}>
                   <img src={locationIcon} />
                   Plaza #75 2nd Floor, Taseen Complex, Bahria Town Civic Center,
                   Islamabad Pakistan
@@ -128,11 +228,11 @@ const Contact = () => {
             <div className="btn-direction">
               <a
                 className="bcd-btn2 bcd-btn margin"
-                onClick={() => currentOpening()}
+                onClick={() => bcdlife()}
               >
                 Life at BCD
               </a>
-              <a className="bcd-btn" onClick={() => currentOpening()}>
+              <a style={{marginLeft:"3px"}} className="bcd-btn" onClick={() => currentOpening()}>
                 Current Opening
               </a>
               <div className="arrow-direction">
@@ -158,7 +258,7 @@ const Contact = () => {
                   ></path>
                 </svg>
               </a>
-              <a href="/">
+              <a href="/#home">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -172,7 +272,7 @@ const Contact = () => {
                   <path d="M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826    C49.652,11.137,38.516,0,24.826,0z M35.901,19.144c0.011,0.246,0.017,0.494,0.017,0.742c0,7.551-5.746,16.255-16.259,16.255    c-3.227,0-6.231-0.943-8.759-2.565c0.447,0.053,0.902,0.08,1.363,0.08c2.678,0,5.141-0.914,7.097-2.446    c-2.5-0.046-4.611-1.698-5.338-3.969c0.348,0.066,0.707,0.103,1.074,0.103c0.521,0,1.027-0.068,1.506-0.199    c-2.614-0.524-4.583-2.833-4.583-5.603c0-0.024,0-0.049,0.001-0.072c0.77,0.427,1.651,0.685,2.587,0.714    c-1.532-1.023-2.541-2.773-2.541-4.755c0-1.048,0.281-2.03,0.773-2.874c2.817,3.458,7.029,5.732,11.777,5.972    c-0.098-0.419-0.147-0.854-0.147-1.303c0-3.155,2.558-5.714,5.713-5.714c1.644,0,3.127,0.694,4.171,1.804    c1.303-0.256,2.523-0.73,3.63-1.387c-0.43,1.335-1.333,2.454-2.516,3.162c1.157-0.138,2.261-0.444,3.282-0.899    C37.987,17.334,37.018,18.341,35.901,19.144z"></path>
                 </svg>
               </a>
-              <a href="/">
+              <a href="https://www.linkedin.com/company/bcdapps.io/" target="_black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -199,18 +299,18 @@ const Contact = () => {
                 name="name"
                 placeholder="Name"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) =>  handleNameInput(e)}
               />
-              <div className="help ">{}</div>
+              {nameError && nameError !== "valid" ? <div className="help is-danger custom-err">{nameError}</div> : null}
               <input
                 className="inputs gray-txt"
                 type="email"
                 name="email"
                 placeholder="Email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => handleEmailInput(e)}
               />
-              <div className="help">{}</div>
+              {emialError && emialError !== "valid" ? <div className="help is-danger custom-err">{emialError}</div> : null}
               <input
                 className="inputs gray-txt"
                 type="number"
@@ -219,7 +319,7 @@ const Contact = () => {
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
-              <div class="help">{}</div>
+              {numberError && numberError !== "valid" ? <div class="help is-danger custom-err">{numberError}</div> : null}
               <textarea
                 class="inputs gray-txt"
                 placeholder="Message"
@@ -228,7 +328,7 @@ const Contact = () => {
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
               <div className="help">{}</div>
-              <a class="send-btn" onClick={() => sendForm}>
+              <a class="send-btn" onClick={() => sendForm()}>
                 Send
               </a>
             </form>

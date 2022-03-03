@@ -79,7 +79,7 @@ const Portfolio = () => {
     <section id="portfolio" className="portfolio flex-display white-bg section">
       <div>
         <div className="portfolio-grid container">
-          <h1 className="main-heading white-circle circle">Portfolio</h1>
+          <h1 className="main-heading white-circle cirle">Portfolio</h1>
           <div className="verticle-slider">
             <a>
               <span

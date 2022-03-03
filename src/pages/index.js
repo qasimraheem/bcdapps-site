@@ -15,22 +15,46 @@ import LifeAtBcd from "../components/life-at-bcd/life-at-bcd";
 import Contact from "../components/contact/contact";
 import Navbar from "../components/navbar/navbar";
 import _ from "lodash";
+import { navigate } from "gatsby";
 
 const IndexPage = () => {
   const [show, setShow] = useState(false);
+  const [visible,setVisible] = useState("visibles");
 
   function click() {
     $(".menu").fadeToggle("slow");
   }
 
-  function Up() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#home").offset().top,
-      },
-      "slow"
-    );
-  }
+  // function Up() {
+    
+  //   // $("html, body").animate(
+  //   //   {
+  //   //     scrollTop: $("#home").offset().top,
+  //   //   },
+  //   //   "slow"
+  //   // );
+  // }
+//    function Up(){
+//     $(".top-btn").one('click', function () {  
+         
+// });
+     
+//    }
+
+
+   function firstFunction(_callback){
+    // do some asynchronous work
+    // and when the asynchronous stuff is complete
+    _callback();    
+}
+
+function Up(){
+    // call first function and pass in a callback function which
+    // first function runs when it has completed
+    firstFunction(function() {
+      navigate("/#home"); 
+    });    
+}
 
   function moveToPage(id) {
     $("html, body").animate(
@@ -105,7 +129,7 @@ const IndexPage = () => {
             id = "about";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $('li a[href="#' + id + '"]').addClass("active-black-item");
             $(".spans").css("visibility", "hidden");
             $(".spans").eq(1).css({
               color: "#FFCB05",
@@ -135,10 +159,10 @@ const IndexPage = () => {
             id = "technologies";
             navLinks.removeClass("active-white-item");
             navLinks.removeClass("active-black-item");
-            $('li a[href="#' + id + '"]').addClass("active-white-item");
+            $('li a[href="#' + id + '"]').addClass("active-black-item");
             $(".spans").css("visibility", "hidden");
             $(".spans").eq(4).css({
-              color: "#0007700",
+              color: "#FFCB05",
               visibility: "visible",
             });
           } else if (id === "products") {
@@ -233,7 +257,10 @@ const IndexPage = () => {
 
     // ($('#yourElement').css('position') == 'absolute')
   }
-
+   
+  const style = {
+    textDecoration:"none"
+  }
   useEffect(() => {
     mounted();
   }, []);
@@ -241,8 +268,8 @@ const IndexPage = () => {
   return (
     <div>
       <div className="nav-component">
-        <div className="top-content" style={{margin:"0 auto",width:"97%" }}>
-          <img className="logo" src={bcdLogoImg} />
+        <div className="top-content padd-x-y" style={{margin:"0 auto",width:"97.2%" }}>
+          <img className="logo" style={{marginLeft:"1px"}} src={bcdLogoImg} />
           <div className="nav-menu">
             <button
               className="bcd-btn hire invisible-hire-btn1"
@@ -252,9 +279,9 @@ const IndexPage = () => {
               Hire Us
             </button>
             <img onClick={() => click()} className="menu-svg" src={menuIcon} />
-            <ul className="menu">
+            <ul style={{paddingLeft:"0rem"}} className="menu">
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#home"
                   onClick={() => moveToPage("#about")}
@@ -263,7 +290,7 @@ const IndexPage = () => {
                 </a>
               </li>
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#about"
                   onClick={() => moveToPage("#about")}
@@ -272,7 +299,7 @@ const IndexPage = () => {
                 </a>
               </li>
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#services"
                   onClick={() => moveToPage("#services")}
@@ -281,7 +308,7 @@ const IndexPage = () => {
                 </a>
               </li>
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#portfolio"
                   onClick={() => moveToPage("#portfolio")}
@@ -290,7 +317,7 @@ const IndexPage = () => {
                 </a>
               </li>
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#technologies"
                   onClick={() => moveToPage("#technologies")}
@@ -299,7 +326,7 @@ const IndexPage = () => {
                 </a>
               </li>
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#partners"
                   onClick={() => moveToPage("#partners")}
@@ -308,7 +335,7 @@ const IndexPage = () => {
                 </a>
               </li>
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#our_team"
                   onClick={() => moveToPage("#our_team")}
@@ -317,7 +344,7 @@ const IndexPage = () => {
                 </a>
               </li>
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#bcd-life"
                   onClick={() => moveToPage("#bcd-life")}
@@ -326,14 +353,13 @@ const IndexPage = () => {
                 </a>
               </li>
               <li>
-                <a
+                <a style={style}
                   className="menu-items"
                   href="#contact_us"
                   onClick={() => moveToPage("#contact_us")}
                 >
                   Contact us
                 </a>
-                s
               </li>
             </ul>
           </div>
@@ -341,8 +367,8 @@ const IndexPage = () => {
       </div>
       <Navbar />
       <button className="top-btn" onClick={() => Up()}>
-        <HiOutlineChevronDoubleUp />
-        <p>Top</p>
+        <HiOutlineChevronDoubleUp style={{fontSize:"1.2rem"}} />
+        <p style={{marginTop:"-2px"}}>Top</p>
       </button>
       <Home />
       <About />
